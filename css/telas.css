@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
-html, body, html * {
-  font-family: 'Roboto', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+html,
+body,
+html * {
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -18,7 +22,7 @@ main {
     margin-top: 10px;
 }
 
- /* Tela (slide) */
+/* Tela (slide) */
 .tela {
     width: 888px;
     height: 500px;
@@ -26,14 +30,14 @@ main {
     padding: 0;
     background: #ffffff;
     border-radius: 9px;
-   /* box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);*/
+    /* box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);*/
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     transform-origin: center center;
     font-size: 14px;
-    border:1px solid #ccc;
+    border: 1px solid #ccc;
 }
 
 /* botões de anterior e próximo */
@@ -43,16 +47,18 @@ main {
     width: 40px;
     height: 85px;
     background: #483758 center center no-repeat;
-   /* box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);*/
+    /* box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);*/
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
+
 .nav-telas-anterior {
     left: 0;
     color: white;
 }
-.nav-telas-anterior i{
+
+.nav-telas-anterior i {
     font-size: 24px;
     position: relative;
     margin: auto;
@@ -60,11 +66,13 @@ main {
     color: #f7d32e;
     left: 6px;
 }
+
 .nav-telas-proxima {
     right: 0;
     color: white;
 }
-.nav-telas-proxima i{
+
+.nav-telas-proxima i {
     font-size: 24px;
     position: relative;
     margin: auto;
@@ -77,11 +85,13 @@ main {
 .nav-telas-proxima:hover {
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.7);
 }
+
 .nav-telas-anterior {
     order: 1;
     border-radius: 0 50px 50px 0;
     transition: 0.3s;
 }
+
 .nav-telas-proxima {
     order: 3;
     border-radius: 50px 0 0 50px;
@@ -96,9 +106,11 @@ footer {
     margin: 0;
     padding: 9px 0;
 }
+
 .nav-telas {
     width: 100%;
 }
+
 .nav-telas-progresso {
     width: 90%;
     margin: 0 auto;
@@ -106,6 +118,7 @@ footer {
     display: table;
     height: 10px;
 }
+
 .nav-telas-progresso a {
     display: table-cell;
     height: 10px;
@@ -118,19 +131,24 @@ footer {
     color: #222;
     padding: 0;
 }
+
 .nav-telas-progresso a:first-child {
     border-radius: 9px 0 0 9px;
 }
+
 .nav-telas-progresso a:last-child {
     border-radius: 0 9px 9px 0;
 }
+
 .nav-telas-progresso .tela-atual {
     background-color: #483758;
 }
+
 .nav-telas-progresso .tela-visualizada {
     background-color: #483758;
 }
-.nav-telas-progresso a > span > span {
+
+.nav-telas-progresso a>span>span {
     display: none;
     width: 130px;
     height: auto;
@@ -139,7 +157,7 @@ footer {
     bottom: 20px;
     left: 50%;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     right: 0;
     background-color: #e5e5e5;
     box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
@@ -147,48 +165,95 @@ footer {
     text-align: center;
     font-weight: bold;
 }
-.nav-telas-progresso a > span > span:after {
+
+.nav-telas-progresso a>span>span:after {
     content: "";
-    display: block; /* reduce the damage in FF3.0 */
+    display: block;
+    /* reduce the damage in FF3.0 */
     position: absolute;
     bottom: -8px;
     left: 50%;
     -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     width: 0;
     border-width: 8px 5px 0;
     border-style: solid;
     border-color: #e5e5e5 transparent;
 }
+
 .nav-telas-progresso a:hover {
     height: 10px;
 }
+
 .nav-telas-progresso a:hover>span>span {
     display: block;
 }
+
 .nav-telas-progresso-pagina {
     display: block;
     text-align: right;
     font-size: 10px;
 }
+
 /* ==========================================================================
    Estilos Gerais de Texto e Conteúdo
    ========================================================================== */
-hgroup,h1,h2,h3,h4,h5,h6 {
-    font-family: 'Roboto', sans-serif;
+hgroup,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
     border: none 0px transparent;
 }
+
 h1 {
-    color:#f7d32e;
-    font-size: 30px;
+     color: #004D73;
+     font-size: 18px;
 }
+
 h2 {
     font-size: 30px;
 }
+
 h3 {
     color: #a80d6d;
     font-size: 24px;
 }
+
+.objetivo {
+    width: 100%;
+}
+
+.objetivo-modal {
+    height: 202.7px;
+    width: 611.15px;
+    background-color: #FAC900;
+    margin: 94.25px auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.objetivo-modal .icone-image {
+    width: 52.85px;
+    height: 63.45px;
+    margin-top: -44.15px;
+}
+
+/* .objetivo-modal h3 {
+    color: #004D73;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+} */
+
+.objetivo-modal p {
+    font-size: 14px;
+    font-weight: normal;
+}
+
 /*.tela a,
 .tela a:visited,
 .tela a:hover,
@@ -240,17 +305,23 @@ table {
     border-radius: 9px;
     border-spacing: 0 2px;
 }
-th, td {
+
+th,
+td {
     padding: 3px 6px;
     /*border: 1px solid #666666;*/
 }
+
 tr:nth-child(even) {
     background-color: #eee;
 }
-thead, th {
+
+thead,
+th {
     background-color: #999;
     color: #fff;
 }
+
 td[colspan],
 th[colspan] {
     text-align: center;
@@ -259,40 +330,51 @@ th[colspan] {
 .fonte-8 {
     font-size: 8px;
 }
+
 .fonte-9 {
     font-size: 9px;
 }
+
 .fonte-10 {
     font-size: 10px;
 }
+
 .fonte-11 {
     font-size: 11px;
 }
+
 .fonte-12 {
     font-size: 12px;
 }
+
 .fonte-14 {
     font-size: 14px;
 }
+
 .fonte-16 {
     font-size: 16px;
 }
+
 .fonte-18 {
     font-size: 18px;
 }
+
 .fonte-20 {
     font-size: 20px;
 }
+
 .fonte-22 {
     font-size: 22px;
 }
+
 .fonte-24 {
     font-size: 24px;
 }
+
 /* ==========================================================================
    Leiautes de Telas
    ========================================================================== */
-.tela > div {
+.tela>div {
     background-color: transparent;
 }
 
@@ -300,13 +382,15 @@ th[colspan] {
 .coluna-esquerda {
     float: left;
     height: auto;
-   /* padding-left: 32px;*/
+    /* padding-left: 32px;*/
 }
+
 .coluna-direita {
     float: right;
     height: auto;
-   /* padding-left: 32px;*/
+    /* padding-left: 32px;*/
 }
+
 .linha {
     margin: 0;
     width: auto;
@@ -315,20 +399,25 @@ th[colspan] {
 }
 
 .largura-1_1 {
-   min-width: 888px;
+    min-width: 888px;
 }
+
 .largura-1_2 {
     max-width: 444px;
 }
+
 .largura-1_3 {
     max-width: 296px;
 }
-.largura-1_4{
-    max-width: 222px   
+
+.largura-1_4 {
+    max-width: 222px
 }
+
 .largura-2_3 {
     max-width: 592px;
 }
+
 .largura-3_4 {
     max-width: 666px;
 }
@@ -336,29 +425,36 @@ th[colspan] {
 .altura-1_1 {
     height: 500px;
 }
+
 .altura-1_2 {
     height: 250px;
     overflow: auto;
 }
+
 .coluna.tela-cheia {
     padding-left: 16px;
-   /* padding-right: 48px;*/
+    /* padding-right: 48px;*/
 }
+
 .coluna.tela-cheia.esquerda {
     padding-left: 16px;
     padding-right: 48px;
 }
+
 .coluna.tela-cheia:first-child {
     padding-left: 0;
 }
-.coluna.tela-cheia:first-child + .largura-1_2 {
+
+.coluna.tela-cheia:first-child+.largura-1_2 {
     width: 336px;
 }
+
 .linha.tela-cheia {
     margin: 0;
-	padding: 0;
+    padding: 0;
     width: 100%;
 }
+
 .tela-cheia img,
 .tela-cheia figure,
 .tela-cheia figure img {
@@ -367,12 +463,14 @@ th[colspan] {
     margin: 0;
     padding: 0;
 }
+
 .tela-cheia figure,
 .tela-cheia figure img {
     margin: 0;
     padding: 0;
     position: relative;
 }
+
 .tela-cheia figure figcaption {
     margin: 0;
     padding: 16px;
@@ -383,12 +481,15 @@ th[colspan] {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
 }
+
 .tela-cheia.largura-1_2 figure figcaption {
     width: 368px;
 }
+
 .tela-cheia.largura-1_3 figure figcaption {
     width: 240px;
 }
+
 .tela-cheia.largura-2_3 figure figcaption {
     width: 496px;
 }
@@ -399,6 +500,7 @@ th[colspan] {
     position: absolute;
     z-index: -1;
 }
+
 iframe {
     margin: 0;
 }
@@ -415,27 +517,34 @@ iframe {
 .btlr {
     border-top-left-radius: 9px;
 }
+
 .btrr {
     border-top-right-radius: 9px;
 }
+
 .bblr {
     border-bottom-left-radius: 9px;
 }
+
 .bbrr {
     border-bottom-right-radius: 9px;
 }
+
 .blr {
     border-top-left-radius: 9px;
     border-bottom-left-radius: 9px;
 }
+
 .brr {
     border-top-right-radius: 9px;
     border-bottom-right-radius: 9px;
 }
+
 .btr {
     border-top-left-radius: 9px;
     border-top-right-radius: 9px;
 }
+
 .bbr {
     border-bottom-left-radius: 9px;
     border-bottom-right-radius: 9px;
@@ -445,65 +554,87 @@ iframe {
 .sem-margens {
     margin: 0;
 }
+
 .mt0 {
     margin-top: 0;
 }
+
 .mr0 {
     margin-right: 0;
 }
+
 .mb0 {
     margin-bottom: 0;
 }
+
 .ml0 {
     margin-left: 0;
 }
+
 .mt8 {
     margin-top: 8px;
 }
+
 .mr8 {
     margin-right: 8px;
 }
+
 .mb8 {
     margin-bottom: 8px;
 }
+
 .ml8 {
     margin-left: 8px;
 }
+
 .mt16 {
     margin-top: 16px;
 }
+
 .mr16 {
     margin-right: 16px;
 }
+
 .mb16 {
     margin-bottom: 16px;
 }
+
 .ml16 {
     margin-left: 16px;
 }
+
 .mt32 {
     margin-top: 32px;
 }
+
 .mr32 {
     margin-right: 32px;
 }
+
 .mb32 {
     margin-bottom: 32px;
 }
+
 .ml32 {
     margin-left: 32px;
 }
 
+.ml36 {
+    margin-left: 36px;
+}
+
 /* Capas e Seções */
-.tela-secao > div {
+.tela-secao>div {
     height: 245px;
     width: 800px;
     position: relative;
 }
+
 .tela-secao div hgroup {
     position: absolute;
     width: 800px;
 }
+
 .tela-secao div hgroup h1,
 .tela-secao div hgroup h2 {
     margin: 0;
@@ -511,35 +642,44 @@ iframe {
     text-align: center;
     border: 0 none transparent;
 }
+
 .tela-secao div:first-child hgroup {
     bottom: 0;
 }
+
 .tela-secao div:first-child hgroup h1,
 .tela-secao div:first-child hgroup h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
+
 .tela-secao div:first-child hgroup h1 {
     font-size: 24px;
 }
+
 .tela-secao div:first-child hgroup h2 {
     font-size: 20px;
 }
+
 .tela-secao div:last-child hgroup {
     top: 0;
 }
+
 .tela-secao div:last-child hgroup h1,
 .tela-secao div:last-child hgroup h2 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
+
 .tela-secao div:last-child hgroup h1 {
     padding-top: 16px;
     font-size: 32px;
 }
+
 .tela-secao div:last-child hgroup h2 {
     font-size: 28px;
 }
+
 .tela-secao hr {
     height: 10px;
     background-color: #339933;
@@ -548,30 +688,30 @@ iframe {
     padding: 0;
 }
 
-.video-telacheia{
-    
+.video-telacheia {
+
     height: 440px;
     width: 736px;
 }
 
-.video-titulo{
-height: 360px;
+.video-titulo {
+    height: 360px;
     width: 640px;
     margin-left: auto;
     margin-right: auto;
 
 }
 
-ul{
-  padding-left: 10px;
+ul {
+    padding-left: 10px;
     padding-right: 10px;
-      list-style: square;
-    
+    list-style: square;
+
 }
 
-li{
+li {
     margin-bottom: 10px;
-    
+
 }
 
 /*
@@ -579,38 +719,54 @@ li::before {
     color:#339933;
 }*/
 
-.fleft{
+.fleft {
     float: left;
 }
 
-ol.start { 
-    counter-reset: mycounter; 
+ol.start {
+    counter-reset: mycounter;
 }
-ol.start li, ol.continue li {
+
+ol.start li,
+ol.continue li {
     list-style: none;
 }
-ol.start li:before, ol.continue li:before { 
-    content: counter(mycounter) ". "; 
+
+ol.start li:before,
+ol.continue li:before {
+    content: counter(mycounter) ". ";
     counter-increment: mycounter;
 }
 
-.centro{
+.centro {
     margin-left: auto;
     margin-right: auto;
 }
 
-.box{
+.box {
     display: inline-block;
     /*padding: 0px 15px 0px 15px;*/
     border-bottom: 1px solid #ccc;
     margin-left: 78px;
     width: 44%;
 }
-.box p:nth-child(even) {background: #FFF; padding: 0px;}
-.box p:nth-child(odd) {background: #EEE;padding: 0px;}   
-.box h3 {border-bottom: 3px solid green;padding-left: 10px; }
 
-.block{
+.box p:nth-child(even) {
+    background: #FFF;
+    padding: 0px;
+}
+
+.box p:nth-child(odd) {
+    background: #EEE;
+    padding: 0px;
+}
+
+.box h3 {
+    border-bottom: 3px solid green;
+    padding-left: 10px;
+}
+
+.block {
     border: 1px solid #ccc;
     padding: 10px;
     width: 700px;
@@ -621,60 +777,63 @@ ol.start li:before, ol.continue li:before {
     width: 100%;
     float: left;
 }
- 
+
 .img-full-right {
     width: 100%;
     float: right;
-}   
+}
 
 .list-arrow li {
-  display: flex;
-  padding: 10px;
+    display: flex;
+    padding: 10px;
 }
-.list-arrow li i{
-  font-size: 1.3em;
-  color: #40920d;
-  display: flex;
-  padding: 5px 10px;
+
+.list-arrow li i {
+    font-size: 1.3em;
+    color: #40920d;
+    display: flex;
+    padding: 5px 10px;
 }
+
 .list-arrow2 li {
-  padding: 10px;
-}
-.list-arrow2 li i{
-  font-size: 1.3em;
-  color: #40920d;
-
-  padding: 5px 10px;
+    padding: 10px;
 }
 
-.header-tela{
+.list-arrow2 li i {
+    font-size: 1.3em;
+    color: #40920d;
+
+    padding: 5px 10px;
+}
+
+.header-tela {
     background-color: #621f48 !important;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     color: white;
 }
-.header-tela p{
+
+.header-tela p {
     line-height: 5px;
 }
 
-.legend{
+.legend {
     font-size: 10px !important;
     position: absolute;
     bottom: 10px;
     right: 40px;
 }
 
-.destaque{
+.destaque {
     background-color: #f7d32e;
     color: #333;
     border-radius: 20px;
     padding: 20px;
 }
 
-audio{
+audio {
     cursor: pointer;
     margin: 20px;
     outline: none;
     height: 40px;
     width: 90%;
 }
-
