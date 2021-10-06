@@ -1,0 +1,101 @@
+<style type="text/css">
+	.move {
+	    overflow-x: scroll;
+	    overflow-y: hidden;
+	    white-space: nowrap;
+	    transition: all 0.2s;
+	    transform: scale(0.99);
+	    will-change: transform;
+	    user-select: none;
+	    cursor: pointer;
+	  }
+	 .move.active {
+	    background: rgba(255,255,255,0.3);
+	    cursor: grabbing;
+	    cursor: -webkit-grabbing;
+	    transform: scale(1);
+	  }
+
+		.move::-webkit-scrollbar {
+		    width: 5px;
+		    height: 5px;
+		    border-radius: 10px;
+		}
+		 
+		.move::-webkit-scrollbar-track {
+		 	height: 5px;   
+		 	background-color: transparent;
+
+		}
+		 
+		.move::-webkit-scrollbar-thumb {
+		  background-color: #621f48;
+		  border-radius: 10px;
+		}
+</style>
+
+<div class=" coluna-esquerda largura-1_1 tela-cheia header-tela" id='animacao'>
+  <p>Módulo 1 - Inclusão social por meio do enfretamento ao estigma e à discriminação​</p>
+  <p>Unidade 1 - Hanseníase: marcos históricos e aspectos socioculturais​</p>
+</div>
+
+<div class="coluna-esquerda largura-1_2" >
+  	<div style="margin: 40px;">  
+   		<h3 style="letter-spacing: -0.2px;" >1. A história da doença no Brasil</h3>  
+ 		<p> Antes mesmo de aprender como diagnosticar, tratar e cuidar das pessoas acometidas pela hanseníase, convidamos você a conhecer um pouco da história da doença no Brasil, que é marcada por dor e sofrimento, mas também por luta, resistências e muitas conquistas.</p>
+		<p>A hanseníase remonta sua origem desde as civilizações antigas. Ainda hoje há controvérsias quanto à origem da doença, se é proveniente da Ásia ou da África (JOPLING e MCDOUGALL, 1991; BRASIL, 1989).</p>
+		<p>Navegue pela linha do tempo, <b>clicando</b> e <b>arrastando</b> para a esquerda.​</p>
+
+		
+ 	</div>
+</div>
+
+<div class="coluna-esquerda largura-1_2" style="width: 100%;">
+	<div style="text-align: center; margin-bottom: 10px;">
+		<p style="text-align: center;"><b>Clique aqui para escutar a audiodescrição</b></p>
+		<audio autoplay="autoplay" controls="controls" style="margin: -5px -10px; height: 30px;">
+			<source src="recursos/audio/RA_02.mp3" type="audio/mp3">
+		</audio>
+	</div>
+</div>
+
+<div class="coluna-direita largura-1_2 move" >   
+ 	<img src="recursos/imgs/RI_06.png" class="" style="height: 347px;">
+</div>
+
+
+
+<script type="text/javascript">
+  $(document).ready(function (){
+
+
+  const slider = document.querySelector('.move');
+	let isDown = false;
+	let startX;
+	let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
+});
+
+  });
+</script>

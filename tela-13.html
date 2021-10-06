@@ -1,0 +1,88 @@
+<style type="text/css">
+  .move {
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+      transition: all 0.2s;
+      transform: scale(0.99);
+      will-change: transform;
+      user-select: none;
+      cursor: pointer;
+    }
+   .move.active {
+      background: rgba(255,255,255,0.3);
+      cursor: grabbing;
+      cursor: -webkit-grabbing;
+      transform: scale(1);
+    }
+
+    .move::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        border-radius: 10px;
+    }
+     
+    .move::-webkit-scrollbar-track {
+      height: 5px;   
+      background-color: transparent;
+
+    }
+     
+    .move::-webkit-scrollbar-thumb {
+      background-color: #621f48;
+      border-radius: 10px;
+    }
+</style>
+<div class=" coluna-esquerda largura-1_1 tela-cheia header-tela" id='animacao'>
+  <p>Módulo 1 - Inclusão social por meio do enfretamento ao estigma e à discriminação​</p>
+  <p>Unidade 1 - Hanseníase: marcos históricos e aspectos socioculturais​</p>
+</div>
+
+<div class="coluna-esquerda largura-1_2" >
+ 
+  <div style="margin: 40px;">  
+    <p>As políticas voltadas para a redução de carga da hanseníase acompanham a evolução das políticas públicas de saúde de forma geral. Para fins didáticos, vamos organizá-la por períodos e datas relevantes. Navegue pela linha do tempo, <b>clicando</b> e <b>arrastando</b> para a esquerda.​</p>
+  </div>
+</div>
+
+<div class="coluna-direita largura-1_2 move" >   
+ 	<img src="recursos/imgs/RI_07.png" class="" style="height: 424px;">
+</div>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function (){
+
+
+  const slider = document.querySelector('.move');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+slider.addEventListener('mousedown', (e) => {
+  isDown = true;
+  slider.classList.add('active');
+  startX = e.pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+});
+slider.addEventListener('mouseleave', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mouseup', () => {
+  isDown = false;
+  slider.classList.remove('active');
+});
+slider.addEventListener('mousemove', (e) => {
+  if(!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - slider.offsetLeft;
+  const walk = (x - startX) * 3; //scroll-fast
+  slider.scrollLeft = scrollLeft - walk;
+  console.log(walk);
+});
+
+  });
+</script>

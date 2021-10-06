@@ -1,0 +1,76 @@
+<script type="text/javascript">
+  $(document).ready(function (){
+
+  });
+</script>
+
+<head>
+	<style>
+		.video-desc {
+		position: absolute;
+		right: -523px;
+		width: 40%;
+		height: 450px;
+    top: 0;
+		padding: 10px 40px 40px 40px;
+		color: #621f48;
+		background-color: rgba(255, 255, 255, 0.8);
+		background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
+		font-weight: 400;
+
+	
+	}
+		
+	.show-video-desc{
+		animation: show_video_desc 0.3s forwards;
+	}
+	.hide-video-desc{
+		animation: hide_video_desc 0.2s forwards;
+	}
+
+	@keyframes show_video_desc {
+		0%     { opacity: 0; right: -523px }
+		100%   { opacity: 1; right: 0px;}
+	}
+	@keyframes hide_video_desc {
+		0%     { opacity: 1; right: 0px;}
+		100%   { opacity: 0; right: -523px }
+	}
+
+	</style>
+</head>
+
+<div class="coluna-esquerda  largura-1_1" >
+	<video id="full-video" width="100%" height="500" controls poster="recursos/imgs/RI_16.png">
+		<source src="recursos/videos/#" type="video/mp4"><!--<iframe width="444px" height="270" src="https://www.youtube.com/embed/vSkIMX1HCiE?start=189" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+		Your browser does not support the video tag.
+	</video>
+	<div class="video-desc show-video-desc"> 
+		<!--<h3 ><i class="fas fa-exclamation-circle" style="font-size: 28px;"></i> SAIBA MAIS</h3>  -->
+	<p>Com o objetivo de conhecer um pouco mais da história da hanseníase no Brasil, apresentamos dois documentários: <b>Memórias Internas</b> e <b>Tradições do Interior</b>. </p>	
+    <p><b><u>Documentário:</u></b> Memórias Internas</p>
+    <p>De Renato Falzoni</p>
+    <p><b><u>Tempo</u></b>: 24:36</p>
+    <p><b><u>Sinopse</u></b>: Nivaldo Mercúrio, nascido no dia 11 de junho de 1927, o mais velho de quatro filhos guarda uma lembrança marcante de sua infância. Aos seis anos de idade, viu sua mãe sendo levada por uma ambulância preta do DPL (Departamento de Profilaxia da Lepra) e a casa onde morava com a família ser colocada em chamas. (fonte:<a href="http://www.morhan.org.br/" target="_blank">http://www.morhan.org.br/</a>)​</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function (){
+	$('.video-desc').click(function (event) {
+		if ($(this).hasClass("show-video-desc")){
+		$("#full-video").get(0).play();
+	}else{
+		$("#full-video").get(0).pause();
+	}
+	event.preventDefault();
+	});
+	var video = document.getElementById("full-video");
+	video.onplay = function() {
+	$(".video-desc").removeClass("show-video-desc").addClass("hide-video-desc");
+	};
+	video.onpause = function() {
+	$(".video-desc").removeClass("hide-video-desc").addClass("show-video-desc");
+	};
+	});
+</script>

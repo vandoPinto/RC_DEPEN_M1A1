@@ -1,0 +1,46 @@
+﻿{
+    "Package": "CI1",
+    "Institution": {
+        "AroucaID": 0,
+        "Acronym": "NEAD FIOCRUZ DF",
+        "Name": "Núcleo de Educação a Distância Fiocruz Brasília"
+    },
+    "Resource": {
+        "Name": "HSN_M1_U1",
+        "Language": "pt-BR",
+        "CreationDate": "2021-04-20",
+        "Review": 1,
+        "ReviewDate": "2021-04-20",
+        "CoverImage": "capa.png"
+    },
+    "SupportedDevices": [
+        "Tablet",
+        "Desktop",
+		"Smartphone"
+    ],
+    "Video": {
+        "Formats": [
+            "mp4"
+        ],
+        "Resolutions": [
+		    "720p"
+        ]
+    },
+    "Persistence": {
+        "InstitutionAcronym": "NEAD_FIOCRUZ_DF",
+        "Version": "0001",
+        "Name": "HSN_M1_U1"
+    },
+    "Dictionary": [
+        {
+            "Variable": "STATUS",
+            "Description": "Variável padrão, indica o status do recurso.",
+            "Format": {
+                "status": "Valor nominal textual do status podendo ter os seguintes valores 'attended', 'attempted', 'completed', 'passed', 'failed'",
+                "percentage": "Valor inteiro entre 0 e 100",
+                "LTIvalue": "Valor ponto flutuante entre 0 e 1",
+                "pages": "Array de valores booleanos que indicam a numeração de cada página do artefato"
+            }
+        }
+    ]
+}
