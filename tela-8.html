@@ -1,101 +1,35 @@
-<style type="text/css">
-	.move {
-	    overflow-x: scroll;
-	    overflow-y: hidden;
-	    white-space: nowrap;
-	    transition: all 0.2s;
-	    transform: scale(0.99);
-	    will-change: transform;
-	    user-select: none;
-	    cursor: pointer;
-	  }
-	 .move.active {
-	    background: rgba(255,255,255,0.3);
-	    cursor: grabbing;
-	    cursor: -webkit-grabbing;
-	    transform: scale(1);
-	  }
+<header style="height: 72px; width: 100%; background-color: #FAC900; ">
+    <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
+    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+    <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
+    <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
+</header>
 
-		.move::-webkit-scrollbar {
-		    width: 5px;
-		    height: 5px;
-		    border-radius: 10px;
-		}
-		 
-		.move::-webkit-scrollbar-track {
-		 	height: 5px;   
-		 	background-color: transparent;
 
-		}
-		 
-		.move::-webkit-scrollbar-thumb {
-		  background-color: #621f48;
-		  border-radius: 10px;
-		}
-</style>
 
-<div class=" coluna-esquerda largura-1_1 tela-cheia header-tela" id='animacao'>
-  <p>Módulo 1 - Inclusão social por meio do enfretamento ao estigma e à discriminação​</p>
-  <p>Unidade 1 - Hanseníase: marcos históricos e aspectos socioculturais​</p>
+<div class="coluna-esquerda largura-1_2 ">
+    <div style="margin-top: 130px; padding-right: 36px;">
+        <h1>Diversidade...</h1>
+        <ul>
+            <li>de características populacionais e regionais;</li>
+            <li>de modos de gerir específicos dos entes estaduais;</li>
+            <li>da natureza dos estabelecimentos prisionais;</li>
+            <li>dos tipos de regimes de execução da pena;</li>
+        </ul>
+        <p>... entre outros aspectos.</p>
+
+    </div>
 </div>
 
-<div class="coluna-esquerda largura-1_2" >
-  	<div style="margin: 40px;">  
-   		<h3 style="letter-spacing: -0.2px;" >1. A história da doença no Brasil</h3>  
- 		<p> Antes mesmo de aprender como diagnosticar, tratar e cuidar das pessoas acometidas pela hanseníase, convidamos você a conhecer um pouco da história da doença no Brasil, que é marcada por dor e sofrimento, mas também por luta, resistências e muitas conquistas.</p>
-		<p>A hanseníase remonta sua origem desde as civilizações antigas. Ainda hoje há controvérsias quanto à origem da doença, se é proveniente da Ásia ou da África (JOPLING e MCDOUGALL, 1991; BRASIL, 1989).</p>
-		<p>Navegue pela linha do tempo, <b>clicando</b> e <b>arrastando</b> para a esquerda.​</p>
-
-		
- 	</div>
-</div>
-
-<div class="coluna-esquerda largura-1_2" style="width: 100%;">
-	<div style="text-align: center; margin-bottom: 10px;">
-		<p style="text-align: center;"><b>Clique aqui para escutar a audiodescrição</b></p>
-		<audio autoplay="autoplay" controls="controls" style="margin: -5px -10px; height: 30px;">
-			<source src="recursos/audio/RA_02.mp3" type="audio/mp3">
-		</audio>
-	</div>
-</div>
-
-<div class="coluna-direita largura-1_2 move" >   
- 	<img src="recursos/imgs/RI_06.png" class="" style="height: 347px;">
+<div class="coluna-direita largura-1_2">
+    <img style="height: 228px; width: 266.05px;" src="recursos/imgs/SI_08.png">
 </div>
 
 
 
-<script type="text/javascript">
-  $(document).ready(function (){
 
 
-  const slider = document.querySelector('.move');
-	let isDown = false;
-	let startX;
-	let scrollLeft;
 
-slider.addEventListener('mousedown', (e) => {
-  isDown = true;
-  slider.classList.add('active');
-  startX = e.pageX - slider.offsetLeft;
-  scrollLeft = slider.scrollLeft;
-});
-slider.addEventListener('mouseleave', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mouseup', () => {
-  isDown = false;
-  slider.classList.remove('active');
-});
-slider.addEventListener('mousemove', (e) => {
-  if(!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - slider.offsetLeft;
-  const walk = (x - startX) * 3; //scroll-fast
-  slider.scrollLeft = scrollLeft - walk;
-  console.log(walk);
-});
-
-  });
-</script>
+<footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
+    <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
+</footer>
