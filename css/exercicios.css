@@ -1,26 +1,31 @@
 /* Tela Informativa */
 
-#informativo .texto-informativo{
+#informativo .texto-informativo {
   margin: 15px;
 }
-.texto-informativo p{
+
+.texto-informativo p {
   margin-top: 1px !important;
   margin-bottom: 1px !important;
 }
-.div-btn-info{
+
+.div-btn-info {
   margin: 15px;
 }
-.btn-informativo{
+
+.btn-informativo {
   border-radius: 5px;
   padding: 5px;
   background-color: #621f48;
   color: white;
   cursor: pointer;
 }
-.img-informativo{
+
+.img-informativo {
   width: 100% !important;
 }
-.main-text{
+
+.main-text {
   font-weight: 600;
 }
 
@@ -43,7 +48,7 @@
   margin-top: 2rem;
 }
 
-.tentativas-user{
+.tentativas-user {
   font-weight: 600;
   color: #621f48;
 }
@@ -62,16 +67,19 @@
   background: #621f48;
   width: 0%;
 }
-.number{
+
+.number {
   color: #621f48;
   font-weight: bold;
   padding-right: 10px;
 }
-.choice-container p{
+
+.choice-container p {
   margin-top: 0.3em !important;
   margin-bottom: 0.3em !important;
 }
-.choiced-container p{
+
+.choiced-container p {
   margin-top: 0.3em !important;
   margin-bottom: 0.3em !important;
 }
@@ -118,69 +126,83 @@
   background: pink !important;
 }
 
-.pontuacao{
+.pontuacao {
   display: inline;
   color: #621f48;
 }
-.tentativasRestantes{
+
+.tentativasRestantes {
   color: red;
 }
+
 #score {
   color: #621f48;
 }
-.tentativasRestantes{
+
+.tentativasRestantes {
   font-weight: 600;
   color: #621f48;
 }
 
-.informativo-bold{
+.informativo-bold {
   font-weight: bold;
   color: #621f48;
   margin-bottom: 0;
   margin-top: 0;
 }
-.informativo li{
+
+.informativo li {
   list-style: decimal;
   padding-bottom: 5px;
 }
-.btn-text{
+
+.btn-text {
   margin: 40px;
 }
-.btn-feedback{
+
+.btn-feedback {
   margin-block-start: 1em;
   margin-block-end: 1em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-#btn-start{
+
+#btn-start {
   color: white;
 }
-.tituloExercicio{
+
+.tituloExercicio {
   margin-top: 2rem;
   margin-bottom: 1rem;
   color: #621f48;
 }
-.tituloQuestao{
+
+.tituloQuestao {
   color: #621f48;
 }
-.divTitulo{
+
+.divTitulo {
   padding: 0px;
   padding-bottom: 20px;
 }
-/*.modal-backdrop {
+
+/* .modal-backdrop {
   z-index: -1 !important;
-}*/
+} */
 
 .no-border {
-  border:none !important;
+  border: none !important;
 }
+
 .minimal-border {
   border: 1px gray solid !important;
 }
-.me_feedback{
+
+.me_feedback {
   display: none;
 }
-.btn-notas{
+
+.btn-notas {
   display: none;
   border-radius: 5px;
   padding: 5px;
@@ -188,25 +210,31 @@
   color: white;
   cursor: pointer;
 }
-.form-group{
+
+.form-group {
   margin: 5px;
   padding: 5px;
 }
+
 form {
   counter-reset: opcoes;
 }
-.modal-title{
+
+.modal-title {
   font-weight: bold;
 }
+
 input[type="radio"]+label::before,
 input[type="checkbox"]+label::before {
   counter-increment: opcoes;
   content: "("counter(opcoes, lower-alpha) ") ";
   font-weight: bold;
 }
+
 input[type="radio"] {
   display: none;
 }
+
 input[type="checkbox"] {
   display: none;
 }
@@ -225,73 +253,91 @@ input[type="button"] {
   cursor: pointer;
   color: white;
 }
+
 /*.clicked {
   border:2px solid var(--color-text);
 }*/
-.divTitulo{
+.divTitulo {
   display: none;
 }
+
 #feedbackTexto {
   margin-top: 20px;
 }
+
 #feedbackResultado {
   margin-top: 20px;
   font-weight: bold;
 }
-.div-feedback{
+
+.div-feedback {
   padding: 0px 25px 5px 20px;
   border-radius: 10px;
   display: none;
   margin: 5px 0px 5px 0px;
   width: 80%;
 }
-.feedback-titulo{
+
+.feedback-titulo {
   font-size: 0.9em;
   text-transform: uppercase;
   -webkit-text-stroke: thin;
   margin-block-start: 0.5em !important;
-  margin-block-end: 0.5em!important;
+  margin-block-end: 0.5em !important;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-.feedback-text{
+
+.feedback-text {
   font-size: 0.9em;
   margin-block-start: 0.5em !important;
   margin-block-end: 0.5em !important;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
 }
-.div-feedback i{
+
+.div-feedback i {
   cursor: pointer;
 }
-.div-feedback i:hover{
+
+.div-feedback i:hover {
   color: white;
 }
-.div-feedback i:active{
+
+.div-feedback i:active {
   color: #ccc;
 }
-.div-feedback-row{
+
+.div-feedback-row {
   display: flex;
   justify-content: space-between;
 }
-.informativo-col{
+
+.informativo-col {
   display: flex !important;
 }
-.informativo-texto{
+
+.informativo-texto {
   padding: 30px 5px 20px 30px;
   margin-left: 20px;
 }
-#maiorNotaID{
+
+#maiorNotaID {
   font-weight: 500;
   color: #621f48;
 }
-#tentativasRestantes{
+
+#tentativasRestantes {
   font-weight: 500;
   color: #621f48;
 }
-.bad{
-  color: indianred;;
+
+.bad {
+  color: indianred;
+  ;
 }
-.great{
-  color: forestgreen;;
+
+.great {
+  color: forestgreen;
+  ;
 }

@@ -210,8 +210,8 @@ h6 {
 }
 
 h1 {
-     color: #004D73;
-     font-size: 18px;
+    color: #004D73;
+    font-size: 18px;
 }
 
 h2 {
@@ -223,7 +223,7 @@ h3 {
     font-size: 24px;
 }
 
-p{
+p {
     font-size: 11px;
 }
 
@@ -246,17 +246,55 @@ p{
     margin-top: -44.15px;
 }
 
-/* .objetivo-modal h3 {
-    color: #004D73;
-    font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-} */
-
 .objetivo-modal p {
     font-size: 14px;
     font-weight: normal;
 }
+
+.saiba-mais {
+    width: 100%;
+}
+
+.saiba-mais-modal {
+    height: 184px;
+    width: 470px;
+    background-color: #FAC900;
+    margin: 164px auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.saiba-mais-modal .icone-image {
+    width: 72px;
+    height: 55px;
+    margin-top: -34px;
+}
+
+.saiba-mais-modal p {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.saiba-mais-modal .close {
+    width: 20px;
+    height: 20px;
+    background-color: #FAC900;
+    position: absolute;
+    right: 0px;
+    top: -24px;
+    justify-content: center;
+    text-align: center;
+    padding: 0;
+}
+
+.saiba-mais-modal .modal-body {
+    padding: 0;
+}
+
+.modal-backdrop {
+    z-index: -1 !important;
+}
+
 
 /*.tela a,
 .tela a:visited,
