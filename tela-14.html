@@ -1,76 +1,32 @@
-<script type="text/javascript">
-  $(document).ready(function (){
-
-  });
-</script>
-
-<head>
-	<style>
-		.video-desc {
-		position: absolute;
-		right: -523px;
-		width: 40%;
-		height: 450px;
-    top: 0;
-		padding: 10px 40px 40px 40px;
-		color: #621f48;
-		background-color: rgba(255, 255, 255, 0.8);
-		background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
-		font-weight: 400;
-
-	
-	}
-		
-	.show-video-desc{
-		animation: show_video_desc 0.3s forwards;
-	}
-	.hide-video-desc{
-		animation: hide_video_desc 0.2s forwards;
-	}
-
-	@keyframes show_video_desc {
-		0%     { opacity: 0; right: -523px }
-		100%   { opacity: 1; right: 0px;}
-	}
-	@keyframes hide_video_desc {
-		0%     { opacity: 1; right: 0px;}
-		100%   { opacity: 0; right: -523px }
-	}
-
-	</style>
-</head>
-
-<div class="coluna-esquerda  largura-1_1" >
-	<video id="full-video" width="100%" height="500" controls poster="recursos/imgs/RI_16.png">
-		<source src="recursos/videos/#" type="video/mp4"><!--<iframe width="444px" height="270" src="https://www.youtube.com/embed/vSkIMX1HCiE?start=189" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-		Your browser does not support the video tag.
-	</video>
-	<div class="video-desc show-video-desc"> 
-		<!--<h3 ><i class="fas fa-exclamation-circle" style="font-size: 28px;"></i> SAIBA MAIS</h3>  -->
-	<p>Com o objetivo de conhecer um pouco mais da história da hanseníase no Brasil, apresentamos dois documentários: <b>Memórias Internas</b> e <b>Tradições do Interior</b>. </p>	
-    <p><b><u>Documentário:</u></b> Memórias Internas</p>
-    <p>De Renato Falzoni</p>
-    <p><b><u>Tempo</u></b>: 24:36</p>
-    <p><b><u>Sinopse</u></b>: Nivaldo Mercúrio, nascido no dia 11 de junho de 1927, o mais velho de quatro filhos guarda uma lembrança marcante de sua infância. Aos seis anos de idade, viu sua mãe sendo levada por uma ambulância preta do DPL (Departamento de Profilaxia da Lepra) e a casa onde morava com a família ser colocada em chamas. (fonte:<a href="http://www.morhan.org.br/" target="_blank">http://www.morhan.org.br/</a>)​</p>
+<div style="height: 72px; width: 100%; background-color: #FAC900; ">
+	<div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
+	<img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+	<img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
+	<img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
+</div>
+<div class="coluna-esquerda largura-1_2 ">
+	<div style="margin: 130px 37px;">
+		<p>Para que compreendamos como acontece a <strong>política de prevenção e controle dos principais agravos que
+				acometem o
+				ambiente prisional,</strong> é necessário traçar um panorama sobre a população a que nos referimos.</p>
+		<p>
+			Nesse sentido, os <strong style="text-decoration: underline;">dados do SISDEPEN</strong> nos auxiliarão a
+			entender as principais características do sistema
+			prisional
+			brasileiro, veja mais neste link:
+		</p>
+		<div style="width: 100%; display: flex;">
+			<img style="height: 50px; width: 50px; margin-left: 8px;" src="recursos/imgs/lampada.png">
+			<a href="https://www.gov.br/depen/pt-br/sisdepen."
+				style="color: #004D73;justify-content: center;font-size: 10px;    margin-top: 20px; margin-left: 7px;">https://www.gov.br/depen/pt-br/sisdepen.</a>
+		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$(document).ready(function (){
-	$('.video-desc').click(function (event) {
-		if ($(this).hasClass("show-video-desc")){
-		$("#full-video").get(0).play();
-	}else{
-		$("#full-video").get(0).pause();
-	}
-	event.preventDefault();
-	});
-	var video = document.getElementById("full-video");
-	video.onplay = function() {
-	$(".video-desc").removeClass("show-video-desc").addClass("hide-video-desc");
-	};
-	video.onpause = function() {
-	$(".video-desc").removeClass("hide-video-desc").addClass("show-video-desc");
-	};
-	});
-</script>
+<div class="coluna-direita largura-1_2">
+	<img style="height: 392.95px;" src="recursos/imgs/SI_14.png">
+</div>
+<footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
+	<img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
+	<img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
+		src="recursos/imgs/SI_F2.png">
+</footer>
