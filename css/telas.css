@@ -212,6 +212,7 @@ h6 {
 h1 {
     color: #004D73;
     font-size: 18px;
+    font-weight: bold;
 }
 
 h2 {
@@ -262,6 +263,7 @@ p {
     margin: 164px auto;
     padding-left: 30px;
     padding-right: 30px;
+    border-radius: 15px;
 }
 
 .saiba-mais-modal .icone-image {
@@ -753,7 +755,7 @@ ul {
 }
 
 li {
-    margin-bottom: 10px;
+    /* margin-bottom: 0px; */
 
 }
 

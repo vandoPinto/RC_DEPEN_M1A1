@@ -1,70 +1,35 @@
-<head>
-	<style>
-		.video-desc {
-		position: absolute;
-		right: -523px;
-		width: 40%;
-		height: 450px;
-    top: 0;
-		padding: 10px 40px 40px 40px;
-		color: #621f48;
-		background-color: rgba(255, 255, 255, 0.8);
-		background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,1));
-		font-weight: 400;
-
-	
-	}
-		
-	.show-video-desc{
-		animation: show_video_desc 0.3s forwards;
-	}
-	.hide-video-desc{
-		animation: hide_video_desc 0.2s forwards;
-	}
-
-	@keyframes show_video_desc {
-		0%     { opacity: 0; right: -523px }
-		100%   { opacity: 1; right: 0px;}
-	}
-	@keyframes hide_video_desc {
-		0%     { opacity: 1; right: 0px;}
-		100%   { opacity: 0; right: -523px }
-	}
-
-	</style>
-</head>
-
-<div class="coluna-esquerda  largura-1_1" >
-	<video id="full-video" width="100%" height="500" controls poster="recursos/imgs/RI_17.png">
-		<source src="recursos/videos/#" type="video/mp4"> <!--<iframe width="444" height="315" src="https://www.youtube.com/embed/Wwze6HiBUME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-		Your browser does not support the video tag.
-	</video>
-	<div class="video-desc show-video-desc"> 
-		<!--<h3 ><i class="fas fa-exclamation-circle" style="font-size: 28px;"></i> SAIBA MAIS</h3>  -->
-    <p><b><u>Documentário:</u></b> Tradições do Interior | Instituto Lauro de Souza Lima</p>
-    <p>TV Unesp</p>
-    <p><b><u>Tempo:</u></b> 27:18</p>
-    <p><b><u>Sinopse:</b></u> Conheça as histórias do antigo asilo-colônia, hoje conhecido como Instituto Lauro de Souza Lima! A história do Instituto Lauro de Souza Lima passou por vários
-       momentos até atingir seu status hoje. Fundado em 1933 como Asilo-colônia Aymorés, foi fruto de uma política isolacionista para conter a endemia da lepra ou hanseníase no Brasil.</p>
+<div style="height: 72px; width: 100%; background-color: #FAC900; ">
+	<div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
+	<img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+	<img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
+	<img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
+</div>
+<div class="coluna-esquerda largura-1_3">
+	<img style="height: 391.8px; width: 285.05px; " src="recursos/imgs/SI_15.png">
+</div>
+<div class="coluna-direita largura-2_1 ">
+	<div style="width: 517px; margin: 151px 37px;">
+		<h1>
+			A população prisional brasileira e suas especificidades
+		</h1>
+		<p>
+			Considerando os dados coletados pelo Depen, até junho de 2020, o Brasil possuía <strong
+				style="text-decoration: underline;">753.966</strong> pessoas reclusas em
+			prisões.
+			Entre estas, teríamos <strong style="text-decoration: underline;">716.967 homens</strong> e<strong
+				style="text-decoration: underline;"> 36.999 mulheres,</strong> distribuídos em 1.443 estabelecimentos
+			penais.
+		</p>
+		<p>
+			Apesar de a legislação brasileira classificar os estabelecimentos como “masculinos” (1.063) e “femininos”
+			(115),
+			considerando questões de gênero, o país também conta com unidades prisionais classificadas como “mistas”
+			(265).
+		</p>
 	</div>
 </div>
-
-<script type="text/javascript">
-	$(document).ready(function (){
-	$('.video-desc').click(function (event) {
-		if ($(this).hasClass("show-video-desc")){
-		$("#full-video").get(0).play();
-	}else{
-		$("#full-video").get(0).pause();
-	}
-	event.preventDefault();
-	});
-	var video = document.getElementById("full-video");
-	video.onplay = function() {
-	$(".video-desc").removeClass("show-video-desc").addClass("hide-video-desc");
-	};
-	video.onpause = function() {
-	$(".video-desc").removeClass("hide-video-desc").addClass("show-video-desc");
-	};
-	});
-</script>
+<footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
+	<img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
+	<img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
+		src="recursos/imgs/SI_F2.png">
+</footer>
