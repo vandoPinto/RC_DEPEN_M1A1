@@ -338,16 +338,16 @@ header hgroup {
    Estilos Gerais de Texto e Conteúdo
    ========================================================================== */
 p, li {
-    text-align: justify;
+    text-align: left;
 }
 p.centro {
-    text-align: center;
+    text-align: left;
 }
 p.esquerda {
     text-align: left;
 }
 p.direita {
-    text-align: right;
+    text-align: left;
 }
 .negrito {
     font-weight: bolder;

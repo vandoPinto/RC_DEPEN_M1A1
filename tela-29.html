@@ -3,11 +3,9 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 400px;
-    height: 55px;
+    height: 200px;
     font-size: 10px;
-    background-color: white;
-    margin: auto;
-    border-radius: 0;
+    background-color: #FFFFFF
   }
 
   td,
@@ -33,6 +31,7 @@
   }
 </style>
 
+
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
   <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
   <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
@@ -40,53 +39,124 @@
   <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
 
-<div class="coluna-esquerda largura-2_1 ">
-  <div style="width: 391px; margin: 150px 37px;">
-    <p>Neste outro quadro, é possível perceber também certa superioridade
-      no índice de mulheres em funções relacionadas à educação. De modo
-      geral, a ocupação dos cargos no sistema prisional não difere da
-      ocupação de cargos comumente observada em outros setores da
-      sociedade.</p>
+
+
+
+
+<div class=" coluna-esquerda largura-1_3">
+  <div style="margin: 104.65px 37px; width: 253px;">
+
+
+    <p style="text-align: left">Em relação aos cargos administrativos, há uma proporção parecida entre trabalhadores
+      homens (5.504) e mulheres (5.016).
+    </p>
+    <p>Mas os cargos relacionados à atividade de custódia são majoritariamente ocupados por homens (74.124), tendo
+      apenas
+      14.243 mulheres exercendo essa função.</p>
+
+
+
+  </div>
+</div>
+<div class="coluna-esquerda largura-1_2 ">
+  <img src="recursos/imgs/SI_28.png" style="height: 190.5px; width: 222.25px; margin-top: 104.65px; margin-left: 30px;">
+</div>
+<div class="coluna-direita largura-1_3">
+  <div style="margin-top: 104.65px; margin-right: 37px; width: 253px;">
+    <p>No entanto, ao focalizarmos as funções relacionadas ao contexto de saúde, as mulheres atuam em número superior.
+      Apenas as categorias referentes a dentista, médico clínico e psiquiatra apresentam número maior de trabalhadores
+      homens,
+      como podemos observar no quadro.</p>
+
+    <h1 style="font-size: 10px;">Clique no ícone Saiba mais para ver o quadro da distribuição de profissionais da saúde
+      que atuam no sistema prisional.</h1>
+
+
+    <!-- Botao modal -->
+    <div style="text-align: center; padding-right: 60px; cursor: pointer;" class="btn" data-toggle="modal"
+      data-target="#modalCentro">
+      <img style="height: 65px; width: 182px; margin-left: 46px; margin-top: 12px;" src="recursos/imgs/SI_09_02.png">
+    </div>
+    <!-- Fim botao Modal -->
+
   </div>
 </div>
 
 
-<div class="coluna-direita largura-2_1 altura-1_1" >
-  <div style="background-color: #FFC900;
-    width: 423px;
-    margin-top: 123px;
-    height: 108px;
-    display: flow-root;">
-    <div style="margin-top: 20px;">
-    <table>
-      <tr>
-        <th class="titulo left">Função</th>
-        <th class="titulo">Homens</th>
-        <th class="titulo">Mulheres</th>
-        <th class="titulo">Total</th>
-      </tr>
-      <tr>
-        <td class="left">Pedagogo</td>
-        <td>63</td>
-        <td>254</td>
-        <td>317</td>
-      </tr>
-      <tr>
-        <td class="left">Professor</td>
-        <td>1.606</td>
-        <td>3.223</td>
-        <td>4.829</td>
-      </tr>
+<!-- Modal -->
+<div class="modal fade saiba-mais" id="modalCentro" tabindex="-1" role="dialog"
+  aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="overflow-y:hidden;">
+  <div class="modal-dialog modal-dialog-centered " role="document">
+    <div class="modal-content saiba-mais-modal" style="margin-top: 95px; width: 390px; height: 300px;">
 
-    </table>
-    <p style="font-size: 8px;color: #004C72;margin-top: 3px;margin-left: 15px;">Fonte: SISDEPEN, 2020.</p>
+      <div data-dismiss="modal" class="close" aria-hidden="true">&times;</div>
+      <img class="icone-image" src="recursos/imgs/SI_M_01.png">
+
+      <h2><strong>Saiba mais</strong></h2>
+
+
+      <!-- <div style="height: 200px;"> -->
+      <table>
+        <tr>
+          <th class="titulo left">Função</th>
+          <th class="titulo">Homens</th>
+          <th class="titulo">Mulheres</th>
+          <th class="titulo">Total</th>
+        </tr>
+        <tr>
+          <td class="left">Enfermeiro</td>
+          <td>358</td>
+          <td>1.176</td>
+          <td>1.534</td>
+        </tr>
+        <tr>
+          <td class="left">Auxiliar e Técnico de Enfermagem</td>
+          <td>629</td>
+          <td>1.974</td>
+          <td>2.603</td>
+        </tr>
+        <tr>
+          <td class="left">Psicólogo<br>Médico Clínico</td>
+          <td>242<br>618</td>
+          <td>965<br>250</td>
+          <td>1.207<br>868</td>
+        </tr>
+
+
+        <tr>
+          <td class="left">Médico Ginecologista</td>
+          <td>13</td>
+          <td>19</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td class="left">Médico Psiquiatra <br>Técnico e Auxiliar Odontológico</td>
+          <td>179<br>60</td>
+          <td>79<br>339</td>
+          <td>258<br>399</td>
+        </tr>
+
+        <tr>
+          <td class="left">Dentista</td>
+          <td>428</td>
+          <td>408</td>
+          <td>836</td>
+        </tr>
+
+        <tr>
+          <td class="left">Terapeuta Ocupacional<br>Assistente social</td>
+          <td>35<br>115</td>
+          <td>100<br>1339</td>
+          <td>135<br>1.454</td>
+        </tr>
+      </table>
+      <p style="font-size: 8px;color: #004C72;margin-top: 3px;margin-left: 6px;">Fonte: SISDEPEN, 2020.</p>
+      <!-- </div> -->
+
     </div>
   </div>
 </div>
-
-
-
-
+<!-- Fim modal -->
 
 
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
