@@ -7,44 +7,44 @@
     <script src="js/vendor/jquery-3.1.1.min.js"></script>
 
     <link rel="stylesheet" href="https://efg.brasilia.fiocruz.br/ava/external/quizy/css/quizyfillblank.css">
-    
-     <script>
+
+    <script>
         var questaoAtual = 0;
         var pontuacao = 0;
         var total;
         var arr_escolhas = [];
-        $(document).ready(function () {
+        $(document).ready(function() {
             var elements = parent.document.getElementsByClassName("nav-telas-proxima");
-            for(var i = 0, length = elements.length; i < length; i++) {
-                  elements[i].style.display = 'none'; 
-            }            
+            for (var i = 0, length = elements.length; i < length; i++) {
+                elements[i].style.display = 'none';
+            }
             total = $("section:not([id='resultados'])").length;
             $(".feedback div").hide();
             $(".me_feedback").hide(); //feedbacks nultipla escolha para multiplos feedbacks
             $(".vf_feedback").hide(); //feedbacks in line do VF
             $('input[type="radio"]:checked').prop("checked", false);
-            $("section:not([id='resultados'])").each(function (indexQuestao, questao) {
+            $("section:not([id='resultados'])").each(function(indexQuestao, questao) {
                 $(questao).attr("id", "q" + indexQuestao);
                 $(questao).prepend("<h2>Questão " + (indexQuestao + 1) + " de " + total + "</h2>");
                 $(questao).find("form input[type='button']").attr("id", "q" + indexQuestao + "verificar");
-                $(questao).find("form input[type='radio']").each(function (indexOpcao, opcao) {
+                $(questao).find("form input[type='radio']").each(function(indexOpcao, opcao) {
                     $(opcao).attr("id", "q" + indexQuestao + "-" + indexOpcao);
                 });
-                $(questao).find("form input[type='checkbox']").each(function (indexOpcao, opcao) {
+                $(questao).find("form input[type='checkbox']").each(function(indexOpcao, opcao) {
                     $(opcao).attr("id", "q" + indexQuestao + "-" + indexOpcao);
                 });
-                $(questao).find("form label").each(function (indexOpcaoTexto, opcaoTexto) {
+                $(questao).find("form label").each(function(indexOpcaoTexto, opcaoTexto) {
                     $(opcaoTexto).attr("for", "q" + indexQuestao + "-" + indexOpcaoTexto);
                 });
-                $(questao).find("form input[type='button']").each(function (indexBotao, botao) {
-                    $(botao).click(function () {
+                $(questao).find("form input[type='button']").each(function(indexBotao, botao) {
+                    $(botao).click(function() {
                         verificarResposta("q" + indexQuestao);
                     });
                 });
                 $(questao).find(".me_feedback").append("<div class='fechar-feedback' title='Fechar'>&times;</div>");
-                $(questao).find(".me_feedback").each(function (indexFeedback, feedbackDiv) {
+                $(questao).find(".me_feedback").each(function(indexFeedback, feedbackDiv) {
                     $(feedbackDiv).attr("id", "fb-q" + indexQuestao + "-" + indexFeedback);
-                    $(feedbackDiv).find(".fechar-feedback").click(function () {
+                    $(feedbackDiv).find(".fechar-feedback").click(function() {
                         $("#fb-q" + indexQuestao + "-" + indexFeedback).slideUp("slow");
                     })
                 })
@@ -52,101 +52,103 @@
             });
             $("#resultados").hide();
             $("#selecione-opcao").hide();
-            $("#refazer-exercicio").click(function () {
+            $("#refazer-exercicio").click(function() {
                 location.reload();
             })
         });
+
         function verificarResposta(questao) {
             var opcaoCorreta = $("#" + questao + " form input[type='hidden']").val();
-            if(opcaoCorreta.indexOf("-")>0){ // verifica se é verdadeiro ou falso
+            if (opcaoCorreta.indexOf("-") > 0) { // verifica se é verdadeiro ou falso
 
-                var arr_escolhas =[];
-                var qtd_opt=0;
-                var pt=0;
-                var arr_gabarito=opcaoCorreta.split('-');
-                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']").each(function(){
-                  arr_escolhas.push($(this).val().toUpperCase());
+                var arr_escolhas = [];
+                var qtd_opt = 0;
+                var pt = 0;
+                var arr_gabarito = opcaoCorreta.split('-');
+                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']").each(function() {
+                    arr_escolhas.push($(this).val().toUpperCase());
                 });
-                $("#" + questao + " form input[name='opcao']").each(function(){
-                  if(arr_escolhas[qtd_opt]==arr_gabarito[qtd_opt]){    // acertou
-                    pt++;
-                    $(this).next("label").next("div").addClass("vf_correta").show('slow');
-                  }else{   //errrooooooooooouu
-                    $(this).next("label").next("div").addClass("vf_incorreta").show('slow');
-                  }
-                  qtd_opt++;
+                $("#" + questao + " form input[name='opcao']").each(function() {
+                    if (arr_escolhas[qtd_opt] == arr_gabarito[qtd_opt]) { // acertou
+                        pt++;
+                        $(this).next("label").next("div").addClass("vf_correta").show('slow');
+                    } else { //errrooooooooooouu
+                        $(this).next("label").next("div").addClass("vf_incorreta").show('slow');
+                    }
+                    qtd_opt++;
 
                 });
-                var percent=pt/qtd_opt;
-                pontuacao = pontuacao+percent; 
+                var percent = pt / qtd_opt;
+                pontuacao = pontuacao + percent;
                 exibirFeedback(questao, opcaoSelecionada);
-            }else if(opcaoCorreta.indexOf(",")>0){ // Verifica se é checkbox ou radio
+            } else if (opcaoCorreta.indexOf(",") > 0) { // Verifica se é checkbox ou radio
                 //criar um array com as respostas corretas
-                var qtd_opt=0;
-                var pt=0;
-                var arr_gabarito=opcaoCorreta.split(',');
+                var qtd_opt = 0;
+                var pt = 0;
+                var arr_gabarito = opcaoCorreta.split(',');
                 //cria um array com as alternativas marcadas
-                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").each(function(){
-                  arr_escolhas.push($(this).val());
+                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").each(function() {
+                    arr_escolhas.push($(this).val());
                 });
 
                 //para cada alternativa existente, verifica se foi marcada e se é resposta certa
-                var opcoes = $("#" + questao + " form input[name='opcao']").each(function(){    
+                var opcoes = $("#" + questao + " form input[name='opcao']").each(function() {
                     qtd_opt++;
                     var valOption = $(this).val();
-                    if(arr_escolhas.indexOf(valOption)>=0){
-                        if(arr_gabarito.indexOf(valOption)>=0){
+                    if (arr_escolhas.indexOf(valOption) >= 0) {
+                        if (arr_gabarito.indexOf(valOption) >= 0) {
                             $(this).next("label").addClass("correta");
-                            pt++;        
-                        }else{
+                            pt++;
+                        } else {
                             $(this).next("label").addClass("incorreta");
                         }
-                    }else{
-                        if(arr_gabarito.indexOf(valOption)>=0){
-                            $(this).next("label").addClass("incorreta");        
-                        }else{
+                    } else {
+                        if (arr_gabarito.indexOf(valOption) >= 0) {
+                            $(this).next("label").addClass("incorreta");
+                        } else {
                             $(this).next("label").addClass("correta");
                             pt++;
                         }
 
-                    } 
+                    }
                 });
-                var percent=pt/qtd_opt;
-                pontuacao = pontuacao+percent; 
+                var percent = pt / qtd_opt;
+                pontuacao = pontuacao + percent;
                 console.log(pontuacao);
                 exibirFeedback(questao, opcaoSelecionada);
-            }else{
+            } else {
                 // Trata a resposta do radio button
-                 var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").val();
-                 if (!opcaoSelecionada) {//se não houver opção selecionada, exibir aviso para selecionar uma opção
+                var opcaoSelecionada = $("#" + questao + " form input[name='opcao']:checked").val();
+                if (!opcaoSelecionada) { //se não houver opção selecionada, exibir aviso para selecionar uma opção
                     $("#selecione-opcao").slideDown("slow").delay(3000).slideUp("slow");
-                     $("#selecione-opcao").css('top', $("#"+questao+"verificar").position().top + 35);
-                 } else if (opcaoSelecionada != opcaoCorreta) {//se opção selecionada for incorreta, exibir aviso do erro e mostrar feedback
+                    $("#selecione-opcao").css('top', $("#" + questao + "verificar").position().top + 35);
+                } else if (opcaoSelecionada != opcaoCorreta) { //se opção selecionada for incorreta, exibir aviso do erro e mostrar feedback
                     $("#" + questao + " form input[name='opcao']:checked+label").addClass("incorreta");
-                      $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("incorreta").show('slow');
-                      $(".me_feedback.incorreta").css('top', $("#"+questao+"verificar").position().top + 35);
-                      exibirFeedback(questao, opcaoSelecionada);
-                 } else if (opcaoSelecionada == opcaoCorreta) {
+                    $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("incorreta").show('slow');
+                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top + 35);
+                    exibirFeedback(questao, opcaoSelecionada);
+                } else if (opcaoSelecionada == opcaoCorreta) {
                     //se opção selecionada for a correta, exibir aviso de acerto e mostrar feedback
                     $("#" + questao + " form input[name='opcao']:checked+label").addClass("correta");
                     $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("correta").show('slow');
-                    
+
                     if ($("#" + questao + " .feedback").children("div").length == 1) {
                         $("#" + questao + " .feedback div").addClass("correta");
                     } else {
                         $("#fb-" + questao + "-" + opcaoCorreta).addClass("correta");
                     }
-                    $(".me_feedback.correta").css('top', $("#"+questao+"verificar").position().top + 35);
-                pontuacao++;
-                console.log(pontuacao);
-                exibirFeedback(questao, opcaoSelecionada);
+                    $(".me_feedback.correta").css('top', $("#" + questao + "verificar").position().top + 35);
+                    pontuacao++;
+                    console.log(pontuacao);
+                    exibirFeedback(questao, opcaoSelecionada);
                 }
             }
 
 
 
-            
+
         }
+
         function exibirFeedback(questao, opcaoSelecionada) {
             var feedback = $("#" + questao + " .me_feedback");
             if ($(feedback).children("div").length > 1) {
@@ -159,26 +161,27 @@
             $("#" + questao + "verificar").hide();
             if (questaoAtual < total - 1) {
                 $("#" + questao).append('<input type="button" value="Próxima questão &#10148;" id="' + questao + 'proxima">');
-                $("#" + questao + "proxima").click(function () {
+                $("#" + questao + "proxima").click(function() {
                     proximaQuestao();
                 });
             } else {
                 $("#" + questao).append('<input type="button" value="Ver pontuação &#10148;" id="finalizar">');
-                $("#finalizar").click(function () {
+                $("#finalizar").click(function() {
                     finalizar();
                 })
             }
         }
-         function exibirFeedback_ftb(questao) {
+
+        function exibirFeedback_ftb(questao) {
             $("#" + questao + "verificar").hide();
             if (questaoAtual < total - 1) {
                 $("#" + questao).append('<input type="button" value="Próxima questão &#10148;" id="' + questao + 'proxima">');
-                $("#" + questao + "proxima").click(function () {
+                $("#" + questao + "proxima").click(function() {
                     proximaQuestao();
                 });
             } else {
                 $("#" + questao).append('<input type="button" value="Ver pontuação &#10148;" id="finalizar">');
-                $("#finalizar").click(function () {
+                $("#finalizar").click(function() {
                     finalizar();
                 })
             }
@@ -190,11 +193,12 @@
             questaoAtual++;
             $("#q" + questaoAtual).slideDown("slow");
         }
+
         function finalizar() {
-             var elements = parent.document.getElementsByClassName("nav-telas-proxima");
-            for(var i = 0, length = elements.length; i < length; i++) {
-                  elements[i].style.display = 'block'; 
-            }   
+            var elements = parent.document.getElementsByClassName("nav-telas-proxima");
+            for (var i = 0, length = elements.length; i < length; i++) {
+                elements[i].style.display = 'block';
+            }
             var rendimento = Math.round(pontuacao / total * 100);
             $("#q" + questaoAtual).slideUp("slow");
             // if(rendimento<40){
@@ -207,25 +211,25 @@
             //     var greetings='<span class="great">Voce acertou quase tudo! Muito bem!</span>';
             //     var rank='great';
             // }
-            if(pontuacao==0){
-                var greetings ='';
-                var feed_text='<span class="bad">Estude um pouco mais o conteúdo do curso e refaça a avaliação quando se sentir preparado(a).</span>';
-                var rank='bad';
-            }else if(pontuacao==1){
-                var greetings ='';
-                var feed_text='<span class="med">Estude um pouco mais o conteúdo do curso e refaça a avaliação quando se sentir preparado(a).</span>';
-                var rank='med';
-            }else if(pontuacao==2){
+            if (pontuacao == 0) {
+                var greetings = '';
+                var feed_text = '<span class="bad">Estude um pouco mais o conteúdo do curso e refaça a avaliação quando se sentir preparado(a).</span>';
+                var rank = 'bad';
+            } else if (pontuacao == 1) {
+                var greetings = '';
+                var feed_text = '<span class="med">Estude um pouco mais o conteúdo do curso e refaça a avaliação quando se sentir preparado(a).</span>';
+                var rank = 'med';
+            } else if (pontuacao == 2) {
                 var greetings = '<span class="great">Parabéns!</span> <br>';
-                var feed_text='<span class="great"></span>';
-                var rank='great';
-            }else{
+                var feed_text = '<span class="great"></span>';
+                var rank = 'great';
+            } else {
                 var greetings = '<span class="great">Parabéns! </span><br>';
-                var feed_text='<span class="great"></span>';
-                var rank='great';
+                var feed_text = '<span class="great"></span>';
+                var rank = 'great';
             }
 
-            var texto = greetings+ "De um total de "+total+" questões, você acertou "+pontuacao+".<br>"+ feed_text ;
+            var texto = greetings + "De um total de " + total + " questões, você acertou " + pontuacao + ".<br>" + feed_text;
             $("#texto-rendimento").html(texto);
             // $("#percentual").text(rendimento + "%");
             $("#resultados").slideDown("slow");
@@ -233,27 +237,53 @@
     </script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-     <style>
+    <style>
         body {
             font-size: 11px;
-            overflow:hidden;
+            overflow: hidden;
         }
-
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            border: none 0px transparent;
+        }
+        
+        h1 {
+            color: #004D73;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
         h2 {
-            margin-top: 0px;
+            font-size: 18px;
+            color: #004D73;
         }
-
+        
+        h3 {
+            color: #a80d6d;
+            font-size: 24px;
+        }
+        
+        p {
+            font-size: 11px;
+        }
+        
         form {
             counter-reset: opcoes;
         }
-
-        input[type="radio"]+label::before,  
-        input[type="checkbox"]+label::before{
+        
+        input[type="radio"]+label::before,
+        input[type="checkbox"]+label::before {
             counter-increment: opcoes;
             content: "(" counter(opcoes, lower-alpha) ") ";
             font-weight: bold;
         }
-
+        
         input[type="button"] {
             margin: 1em auto;
             font-weight: bold;
@@ -268,21 +298,21 @@
             width: 50%;
             cursor: pointer;
         }
-
+        
         input[type="button"]:hover {
             background-color: #66b366;
         }
-
+        
         input[type="button"]:active {
             background-color: #99cc99;
         }
-
-        input[type="radio"], 
-        input[type="checkbox"]  {
+        
+        input[type="radio"],
+        input[type="checkbox"] {
             display: none;
         }
-
-        input[type="radio"]+label, 
+        
+        input[type="radio"]+label,
         input[type="checkbox"]+label {
             cursor: pointer;
             padding-left: .2em;
@@ -294,23 +324,23 @@
             list-style: lower-alpha;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
-        input[type="radio"]+label:hover, 
+        
+        input[type="radio"]+label:hover,
         input[type="checkbox"]+label:hover {
             background-color: rgba(51, 153, 51, 0.25);
         }
-
-        input[type="radio"]:disabled+label:hover, 
+        
+        input[type="radio"]:disabled+label:hover,
         input[type="checkbox"]:disabled+label:hover {
             background-color: transparent;
             cursor: text;
         }
-
-        input[type="radio"]:checked+label, 
+        
+        input[type="radio"]:checked+label,
         input[type="checkbox"]:checked+label {
             border: solid .1em rgba(34, 34, 34, 1);
         }
-
+        
         input[type="radio"]+label.correta,
         input[type="radio"]+label.correta:hover,
         input[type="checkbox"]+label.correta,
@@ -319,13 +349,13 @@
             color: #ffffff;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
+        
         input[type="radio"]+label.incorreta,
         input[type="checkbox"]+label.incorreta:hover {
             background-color: pink;
             border: .1em solid rgba(34, 34, 34, 0);
         }
-
+        
         .feedback>div,
         .me_feedback,
         #selecione-opcao {
@@ -344,7 +374,7 @@
             width: 90%;
             text-align: justify;
         }
-
+        
         .feedback>div::before,
         .me_feedback::before,
         #selecione-opcao::before {
@@ -353,21 +383,21 @@
             font-weight: bold;
             margin-bottom: 6px;
         }
-
+        
         #selecione-opcao p {
             text-align: center;
         }
-
+        
         #selecione-opcao::before {
             content: "Nenhuma alternativa foi selecionada.";
             text-align: center;
         }
-
+        
         .feedback>div.correta,
-        .me_feedback.correta{
+        .me_feedback.correta {
             background-color: lightgreen;
         }
-
+        
         .feedback>div.correta::before,
         .me_feedback.correta::before {
             content: "Resposta correta.";
@@ -382,7 +412,7 @@
             font-weight: bold;
             line-height: 11px;
         }
-
+        
         .botao {
             background-color: #393;
             color: #fff;
@@ -390,31 +420,38 @@
             display: inline-block;
             padding: 0 3px;
         }
-        .percentRes{
+        
+        .percentRes {
             font-size: 28px;
         }
-        .bad{
+        
+        .bad {
             color: red;
         }
-        .med{
+        
+        .med {
             color: orange;
         }
-        .great{
+        
+        .great {
             color: green;
         }
-        .vf{
-           border:none;
-           width: 10px;
-           margin-left: 5px;
-           text-transform: uppercase;
+        
+        .vf {
+            border: none;
+            width: 10px;
+            margin-left: 5px;
+            text-transform: uppercase;
         }
-        .vf:focus{
-           box-shadow: 0 0 0 0;
-           border: 0 none;
-           outline: 0;
+        
+        .vf:focus {
+            box-shadow: 0 0 0 0;
+            border: 0 none;
+            outline: 0;
         }
-        .vf_correta{
-            display:inline-block;
+        
+        .vf_correta {
+            display: inline-block;
             position: relative;
             padding: 3px;
             border-radius: 0.25rem;
@@ -422,8 +459,9 @@
             background-color: #d4edda;
             border-color: #c3e6cb;
         }
-        .vf_incorreta{
-            display:inline-block;
+        
+        .vf_incorreta {
+            display: inline-block;
             position: relative;
             padding: 3px;
             border: 1px solid rgb(245, 198, 203);
@@ -431,65 +469,76 @@
             color: rgb(114, 28, 36);
             background-color: rgb(248, 215, 218);
         }
-        td{
+        
+        td {
             padding: 3px;
-            border:0px 1px solid #ddd;
-           font-size: 10px;
+            border: 0px 1px solid #ddd;
+            font-size: 10px;
         }
-        table{
+        
+        table {
             border-bottom: 1px solid #ddd;
         }
-
-        
     </style>
 </head>
 
 <body class="">
-     <section>
-        <div class="enunciado" style="font-size: 12px;">
-            <p>Relacione as características listadas na coluna da direita com as metodologias de custeio da coluna da esquerda:</p>
-            <table style="width: 100%;">
-                <tr>
-                    <th>Metodologias de Custeio</th>
-                    <th>Características:</th>
-                </tr>
-                <tr>
-                    <td>1 – Custo-padrão</td>
-                    <td>( ) Estabelece medidas de comparação de eficiência no uso e utilização de matéria-prima e mão-de-obra direta</td>
-                </tr>
-                <tr>
-                    <td>2 – Centros de custos</td>
-                    <td>( ) Ênfase nos custos diretos</td>
-                </tr>
-                <tr>
-                    <td>3 - Custeio Baseado em Atividade</td>
-                    <td>( ) Divide a organização em segmentos, segundo compartimentos funcionais</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td>( ) O nível de recursos empregados é acompanhado por direcionadores de custo das atividades</td>
-                </tr>
-            </table>
-            <p>Assinale a sequencia correta:</p>
-            </div>
-        <form style="font-size: 10px;">
+    <section>
+        <div class="enunciado" >
+            <p><strong>Considerando os dados coletados pelo Depen, até junho de 2020, é possível afirmar que o Brasil:</strong>
+            </p>
+            <p>
+        </div>
+        <form >
             <input type="radio" name="opcao" value="0">
-            <label>3 – 1 – 2 – 3;</label> <div class="me_feedback"> Sequencia incorreta.</div>
+            <label>Possui cerca de 500.000 pessoas reclusas em prisões.</label>
+            <div class="me_feedback"> Sequencia incorreta.</div>
+
             <input type="radio" name="opcao" value="1">
-            <label>1 – 2 – 2 – 3;</label><div class="me_feedback"> Sequencia incorreta.</div>
+            <label>Tem uma população carcerária majoritariamente feminina.</label>
+            <div class="me_feedback"> Sequencia incorreta.</div>
+
             <input type="radio" name="opcao" value="2">
-            <label>3 – 2 – 3 – 1;</label><div class="me_feedback"> Sequencia incorreta.</div>
+            <label>Distribui sua população carcerária em 1.443 estabelecimentos penais.</label>
+            <div class="me_feedback"> Sequencia incorreta.</div>
+
             <input type="radio" name="opcao" value="3">
-            <label>1 – 2 – 3 – 3;</label><div class="me_feedback"> Sequencia incorreta.</div>
-             <input type="radio" name="opcao" value="4">
-            <label>1 – 1 – 2 – 3.</label> <div class="me_feedback"> Sequencia Correta.</div>
-            <input type="hidden" name="resposta" value="4">
-            <input type="button" value="Verificar resposta">
+            <label>Mantém estabelecimentos penais específicos para idosos.</label>
+            <div class="me_feedback"> Sequencia incorreta.</div>
+
+            <input type="radio" name="opcao" value="4">
+            <label>Possui um sistema prisional com condições ambientais desfavoráveis à propagação de doenças.</label>
+            <div class="me_feedback"> Sequencia incorreta.</div>
+
+            <input type="hidden" name="resposta" value="2">
+            <input type="button" value="Submeter">
         </form>
+
+
+        <!-- <form style="font-size: 10px;">
+                <input type="radio" name="opcao" value="0">
+                <label>3 – 1 – 2 – 3;</label>
+                <div class="me_feedback"> Sequencia incorreta.</div>
+
+                <input type="radio" name="opcao" value="1">
+                <label>1 – 2 – 2 – 3;</label>
+                <div class="me_feedback"> Sequencia incorreta.</div>
+                <input type="radio" name="opcao" value="2">
+                <label>3 – 2 – 3 – 1;</label>
+                <div class="me_feedback"> Sequencia incorreta.</div>
+                <input type="radio" name="opcao" value="3">
+                <label>1 – 2 – 3 – 3;</label>
+                <div class="me_feedback"> Sequencia incorreta.</div>
+                <input type="radio" name="opcao" value="4">
+                <label>1 – 1 – 2 – 3.</label>
+                <div class="me_feedback"> Sequencia Correta.</div>
+                <input type="hidden" name="resposta" value="4">
+                <input type="button" value="Verificar resposta">
+            </form> -->
+        </div>
     </section>
 
-
-  <section>
+    <!-- <section>
         <div class="enunciado" style="font-size: 12px;">
             <p><i>“é um sacrifício financeiro que ocorre quando a empresa adquire um bem ou serviço. Esse sacrifício é representado por entrega de ativos na compra à vista ou pela promessa de entrega na compra a prazo”</i>. Conforme enunciado estamos nos referindo ao conceito contábil de:</p>
             <p>Assinale a resposta correta: </p>
@@ -508,9 +557,9 @@
             <input type="hidden" name="resposta" value="2">
             <input type="button" value="Verificar resposta">
         </form>
-    </section>
+    </section> -->
 
- <section>
+    <!-- <section>
         <div class="enunciado" style="font-size: 12px;">
             <p>Os métodos de custeio alocam os custos para os produtos, respondendo à pergunta <b>Onde foi gasto?</b> As modalidades mais empregadas são:</p>
         </div>
@@ -528,12 +577,7 @@
             <input type="hidden" name="resposta" value="0">
             <input type="button" value="Verificar resposta">
         </form>
-    </section>
-
-
-
-
-
+    </section> -->
 
 
     <section id="resultados">
@@ -547,7 +591,7 @@
         <p>Selecione uma alternativa e em seguida clique em
             <span class="botao">Verificar resposta</span>.</p>
     </div>
-     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
 </body>
 
