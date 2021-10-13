@@ -125,7 +125,7 @@
                 } else if (opcaoSelecionada != opcaoCorreta) { //se opção selecionada for incorreta, exibir aviso do erro e mostrar feedback
                     $("#" + questao + " form input[name='opcao']:checked+label").addClass("incorreta");
                     $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("incorreta").show('slow');
-                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top + 35);
+                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top);
                     exibirFeedback(questao, opcaoSelecionada);
                 } else if (opcaoSelecionada == opcaoCorreta) {
                     //se opção selecionada for a correta, exibir aviso de acerto e mostrar feedback
@@ -137,7 +137,7 @@
                     } else {
                         $("#fb-" + questao + "-" + opcaoCorreta).addClass("correta");
                     }
-                    $(".me_feedback.correta").css('top', $("#" + questao + "verificar").position().top + 35);
+                    $(".me_feedback.correta").css('top', $("#" + questao + "verificar").position().top);
                     pontuacao++;
                     console.log(pontuacao);
                     exibirFeedback(questao, opcaoSelecionada);
@@ -289,7 +289,7 @@
             font-weight: bold;
             color: #ffffff;
             border-radius: 3px;
-            background-color: #339933;
+            background-color: #FAC900;
             border: solid 0 transparent;
             outline: none;
             box-shadow: 0 .1em rgba(0, 0, 0, .5);
@@ -300,11 +300,11 @@
         }
         
         input[type="button"]:hover {
-            background-color: #66b366;
+            background-color: #FAC900;
         }
         
         input[type="button"]:active {
-            background-color: #99cc99;
+            background-color: #FAC900;
         }
         
         input[type="radio"],
@@ -327,7 +327,8 @@
         
         input[type="radio"]+label:hover,
         input[type="checkbox"]+label:hover {
-            background-color: rgba(51, 153, 51, 0.25);
+            background-color: #FAC900;
+            color: red;
         }
         
         input[type="radio"]:disabled+label:hover,
@@ -338,21 +339,22 @@
         
         input[type="radio"]:checked+label,
         input[type="checkbox"]:checked+label {
-            border: solid .1em rgba(34, 34, 34, 1);
+            background-color: #FAC900;
+            color: red;
         }
         
         input[type="radio"]+label.correta,
         input[type="radio"]+label.correta:hover,
         input[type="checkbox"]+label.correta,
         input[type="checkbox"]+label.correta:hover {
-            background-color: #339933;
+            background-color: #FAC900;
             color: #ffffff;
             border: .1em solid rgba(34, 34, 34, 0);
         }
         
         input[type="radio"]+label.incorreta,
         input[type="checkbox"]+label.incorreta:hover {
-            background-color: pink;
+            background-color: #FAC900;
             border: .1em solid rgba(34, 34, 34, 0);
         }
         
@@ -361,14 +363,14 @@
         #selecione-opcao {
             margin: 1em auto;
             color: #222222;
-            border-radius: 3px;
-            background-color: pink;
+            border-radius: 15px;
+            background-color: #FAC900;
             border: solid 0 transparent;
             box-shadow: 0 .1em rgba(0, 0, 0, .5);
             padding: 12px 18px;
             display: block;
             position: absolute;
-            top: 25px;
+            top: 50px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
@@ -380,8 +382,10 @@
         #selecione-opcao::before {
             content: "Resposta incorreta.";
             display: block;
-            font-weight: bold;
             margin-bottom: 6px;
+            color: #004D73;
+            font-size: 14px;
+            font-weight: bold;
         }
         
         #selecione-opcao p {
@@ -395,12 +399,22 @@
         
         .feedback>div.correta,
         .me_feedback.correta {
-            background-color: lightgreen;
+            background-color: #FAC900;
         }
         
         .feedback>div.correta::before,
         .me_feedback.correta::before {
             content: "Resposta correta.";
+            color: #004D73;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .img-logo {
+            display: flex;
+            width: 73px;
+            height: 57px;
+            margin: -78px 0 23px 0
         }
         
         .fechar-feedback {
@@ -414,7 +428,7 @@
         }
         
         .botao {
-            background-color: #393;
+            background-color: #FAC900;
             color: #fff;
             border-radius: 3px;
             display: inline-block;
@@ -483,101 +497,98 @@
 </head>
 
 <body class="">
+    <!-- Questão 1 -->
     <section>
-        <div class="enunciado" >
+        <div class="enunciado">
             <p><strong>Considerando os dados coletados pelo Depen, até junho de 2020, é possível afirmar que o Brasil:</strong>
             </p>
             <p>
         </div>
-        <form >
+        <form>
             <input type="radio" name="opcao" value="0">
             <label>Possui cerca de 500.000 pessoas reclusas em prisões.</label>
-            <div class="me_feedback"> Sequencia incorreta.</div>
-
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png"> Na verdade, a alternativa correta é a letra “c”. Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="radio" name="opcao" value="1">
             <label>Tem uma população carcerária majoritariamente feminina.</label>
-            <div class="me_feedback"> Sequencia incorreta.</div>
-
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “c”. Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="radio" name="opcao" value="2">
             <label>Distribui sua população carcerária em 1.443 estabelecimentos penais.</label>
-            <div class="me_feedback"> Sequencia incorreta.</div>
-
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Você acertou! Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="radio" name="opcao" value="3">
             <label>Mantém estabelecimentos penais específicos para idosos.</label>
-            <div class="me_feedback"> Sequencia incorreta.</div>
-
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “c”. Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="radio" name="opcao" value="4">
             <label>Possui um sistema prisional com condições ambientais desfavoráveis à propagação de doenças.</label>
-            <div class="me_feedback"> Sequencia incorreta.</div>
-
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “c”. Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="hidden" name="resposta" value="2">
             <input type="button" value="Submeter">
         </form>
-
-
-        <!-- <form style="font-size: 10px;">
-                <input type="radio" name="opcao" value="0">
-                <label>3 – 1 – 2 – 3;</label>
-                <div class="me_feedback"> Sequencia incorreta.</div>
-
-                <input type="radio" name="opcao" value="1">
-                <label>1 – 2 – 2 – 3;</label>
-                <div class="me_feedback"> Sequencia incorreta.</div>
-                <input type="radio" name="opcao" value="2">
-                <label>3 – 2 – 3 – 1;</label>
-                <div class="me_feedback"> Sequencia incorreta.</div>
-                <input type="radio" name="opcao" value="3">
-                <label>1 – 2 – 3 – 3;</label>
-                <div class="me_feedback"> Sequencia incorreta.</div>
-                <input type="radio" name="opcao" value="4">
-                <label>1 – 1 – 2 – 3.</label>
-                <div class="me_feedback"> Sequencia Correta.</div>
-                <input type="hidden" name="resposta" value="4">
-                <input type="button" value="Verificar resposta">
-            </form> -->
         </div>
     </section>
 
-    <!-- <section>
-        <div class="enunciado" style="font-size: 12px;">
-            <p><i>“é um sacrifício financeiro que ocorre quando a empresa adquire um bem ou serviço. Esse sacrifício é representado por entrega de ativos na compra à vista ou pela promessa de entrega na compra a prazo”</i>. Conforme enunciado estamos nos referindo ao conceito contábil de:</p>
-            <p>Assinale a resposta correta: </p>
+    <!-- Questao 2 -->
+    <section>
+        <div class="enunciado">
+            <p><strong>Confirmando a necessidade de um tratamento diferenciado, a ONU instituiu, em 2010, as Regras de Bangkok, por meio das quais recomenda:</strong>
+            </p>
+            <p>
         </div>
-        <form style="font-size: 12px;">
+        <form>
             <input type="radio" name="opcao" value="0">
-            <label>Investimento</label> <div class="me_feedback">Incorreto, este é um gasto com aquisição de ativos.</div>
+            <label>Prevenção contra abuso e violência e proteção dos direitos das crianças.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Você acertou! A ONU instituiu, em 2010, as Regras de Bangkok, por meio das quais recomenda que o tratamento de mulheres presas e/ou infratoras seja orientado a partir de eixos voltados
+                às necessidades específicas das mulheres, à prevenção contra abuso e violência e à proteção dos direitos das crianças (BRASIL, 2016).</div>
             <input type="radio" name="opcao" value="1">
-            <label>Custo</label></div><div class="me_feedback"> Incorreto, este é um gasto relativo a todos os bens e serviços.</div>
+            <label>Proteção da mulher, mãe e puérpera e promoção da saúde íntima.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “a”. A ONU instituiu, em 2010, as Regras de Bangkok, por meio das quais recomenda que o tratamento de mulheres presas e/ou infratoras seja orientado
+                a partir de eixos voltados às necessidades específicas das mulheres, à prevenção contra abuso e violência e à proteção dos direitos das crianças (BRASIL, 2016).</div>
             <input type="radio" name="opcao" value="2">
-            <label>Gastos</label> <div class="me_feedback"> Correto, conforme conceito do enunciado.</div>
+            <label>Proteção dos direitos das crianças e das mulheres idosas encarceradas.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Você acertou! Os dados coletados por meio do sistema informatizado que o Depen mantém ratificam a existência de 1.443 estabelecimentos penais no país.</div>
             <input type="radio" name="opcao" value="3">
-            <label>Despesas</label> <div class="me_feedback"> Incorreta, estes são todos os gastos, diretos e indiretos.</div>
-             <input type="radio" name="opcao" value="4">
-            <label>Apuração</label> <div class="me_feedback"> Incorreto, apuração é o resultado.</div>
-            <input type="hidden" name="resposta" value="2">
-            <input type="button" value="Verificar resposta">
-        </form>
-    </section> -->
-
-    <!-- <section>
-        <div class="enunciado" style="font-size: 12px;">
-            <p>Os métodos de custeio alocam os custos para os produtos, respondendo à pergunta <b>Onde foi gasto?</b> As modalidades mais empregadas são:</p>
-        </div>
-        <form style="font-size: 12px;">
-            <input type="radio" name="opcao" value="0">
-            <label>Custo-padrão; Centros de Custos; Custeio Baseado em Atividade (ABC);</label><div class="me_feedback">Correto, os três itens apresentam a resposta sobre o método.</div>
-            <input type="radio" name="opcao" value="1">
-            <label>Custeio por absorção total, Custeio por absorção parcial, Custeio variável (direto).</label><div class="me_feedback"> Incorreto, esses tipos de custos, não respondem o método “onde foi gasto?”.</div>
-            <input type="radio" name="opcao" value="2">
-            <label>Custo-padrão; Centros de Custos, Custeio variável (direto).</label><div class="me_feedback"> Incorreto, o custeio-variável não responde o método “onde foi gasto?”.</div>
-            <input type="radio" name="opcao" value="3">
-            <label>Custeio por absorção total, Custeio por absorção parcial, Centros de Custos.</label><div class="me_feedback"> Incorreto, os custeios por absorção não respondem o método “onde foi gasto?”.</div>
-            <input type="radio" name="opcao" value="3">
-            <label>CCusteio por absorção total, Custo-padrão, Custeio Baseado em Atividade (ABC).</label><div class="me_feedback">Incorreto, o custeio por absorção não respondem o método “onde foi gasto?”.</div>
+            <label>Prevenção contra abuso e violência e outras situações análogas.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “a”. A ONU instituiu, em 2010, as Regras de Bangkok, por meio das quais recomenda que o tratamento de mulheres presas e/ou infratoras seja orientado
+                a partir de eixos voltados às necessidades específicas das mulheres, à prevenção contra abuso e violência e à proteção dos direitos das crianças (BRASIL, 2016).</div>
+            <input type="radio" name="opcao" value="4">
+            <label>Promoção da saúde feminina e infantil pós-parto.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Na verdade, a alternativa correta é a letra “a”. A ONU instituiu, em 2010, as Regras de Bangkok, por meio das quais recomenda que o tratamento de mulheres presas e/ou infratoras seja orientado
+                a partir de eixos voltados às necessidades específicas das mulheres, à prevenção contra abuso e violência e à proteção dos direitos das crianças (BRASIL, 2016).</div>
             <input type="hidden" name="resposta" value="0">
-            <input type="button" value="Verificar resposta">
+            <input type="button" value="Submeter">
         </form>
-    </section> -->
+        </div>
+
+    </section>
+
+    <!-- Questao 3 -->
+    <section>
+        <div class="enunciado">
+            <p><strong>Quais são os agravos mais recorrentes no sistema prisional brasileiro?</strong>
+            </p>
+            <p>
+        </div>
+        <form>
+            <input type="radio" name="opcao" value="0">
+            <label>Hepatite, gripe e bronquite.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">Você acertou! De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</div>
+            <input type="radio" name="opcao" value="1">
+            <label>Asma, bronquite e covid-19.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</div>
+            <input type="radio" name="opcao" value="2">
+            <label>Tuberculose, bronquiolite e hepatite.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</div>
+            <input type="radio" name="opcao" value="3">
+            <label>Covid-19, tuberculose e pneumonia.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</div>
+            <input type="radio" name="opcao" value="4">
+            <label>HIV, sífilis e hepatite.</label>
+            <div class="me_feedback"> <img class="img-logo" src="recursos/imgs/SI_A_01.png">De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</div>
+            <input type="hidden" name="resposta" value="0">
+            <input type="button" value="Submeter">
+        </form>
+        </div>
+    </section>
+
 
 
     <section id="resultados">
