@@ -1,10 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url(http://fonts.googleapis.com/css?family=Poppins:400,100,100italic,300,300bold,400bold,500,500bold);
 
 html,
 body,
 html * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 
@@ -36,7 +35,7 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     transform-origin: center center;
-    font-size: 14px;
+    font-size: 11px;
     border: 1px solid #ccc;
 }
 
@@ -141,11 +140,11 @@ footer {
 }
 
 .nav-telas-progresso .tela-atual {
-    background-color: #483758;
+    background-color: #FAC900;
 }
 
 .nav-telas-progresso .tela-visualizada {
-    background-color: #483758;
+    background-color: #FAC900;
 }
 
 .nav-telas-progresso a>span>span {
@@ -183,7 +182,6 @@ footer {
 
 .nav-telas-progresso a:hover {
     height: 10px;
-    
 }
 
 .nav-telas-progresso a:hover>span>span {
@@ -199,106 +197,105 @@ footer {
 /* ==========================================================================
    Estilos Gerais de Texto e Conteúdo
    ========================================================================== */
-hgroup,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Poppins', sans-serif;
-    border: none 0px transparent;
-}
-
-h1 {
-    color: #004D73;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-h2 {
-    color: #004D73;
-    font-size: 14px;
-}
-
-h3 {
-    color: #a80d6d;
-    font-size: 24px;
-}
-
-p {
-    font-size: 11px;
-}
-
-.objetivo {
-    width: 100%;
-}
-
-.objetivo-modal {
-    height: 202.7px;
-    width: 611.15px;
-    background-color: #FAC900;
-    margin: 94.25px auto;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-
-.objetivo-modal .icone-image {
-    width: 52.85px;
-    height: 63.45px;
-    margin-top: -44.15px;
-}
-
-.objetivo-modal p {
-    font-size: 14px;
-    font-weight: normal;
-}
-
-.saiba-mais {
-    width: 100%;
-}
-
-.saiba-mais-modal {
-    height: 184px;
-    width: 470px;
-    background-color: #FAC900;
-    margin: 164px auto;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 15px;
-}
-
-.saiba-mais-modal .icone-image {
-    width: 72px;
-    height: 55px;
-    margin-top: -34px;
-    
-}
-
-.saiba-mais-modal p {
-    font-size: 11px;
-    font-weight: normal;
-}
-
-.saiba-mais-modal .close {
-    width: 20px;
-    height: 20px;
-    background-color: #FAC900;
-    position: absolute;
-    right: 0px;
-    top: -24px;
-    justify-content: center;
-    text-align: center;
-    padding: 0;
-}
-
-.saiba-mais-modal .modal-body {
-    padding: 0;
-}
-
-.modal-backdrop {
-    z-index: -1 !important;
-}
+   hgroup,
+   h1,
+   h2,
+   h3,
+   h4,
+   h5,
+   h6 {
+       font-family: 'Poppins', sans-serif;
+       border: none 0px transparent;
+   }
+   
+   h1 {
+       color: #004D73;
+       font-size: 18px;
+       font-weight: bolder;
+   }
+   
+   h2 {
+       font-size: 14px;
+       color: #004D73;
+       font-weight: bolder;
+   }
+   
+   h3 {
+       font-size: 14px;
+   }
+   
+   p {
+       font-size: 11px;
+   }
+   
+   .objetivo {
+       width: 100%;
+   }
+   
+   .objetivo-modal {
+       height: 202.7px;
+       width: 560px;
+       background-color: #FAC900;
+       margin: 94.25px auto;
+       padding-left: 30px;
+       padding-right: 30px;
+   }
+   
+   .objetivo-modal .icone-image {
+       width: 52.85px;
+       height: 63.45px;
+       margin-top: -44.15px;
+   }
+   
+   .objetivo-modal p {
+       font-size: 14px;
+       font-weight: normal;
+   }
+   
+   .saiba-mais {
+       width: 100%;
+   }
+   
+   .saiba-mais-modal {
+       height: 184px;
+       width: 470px;
+       background-color: #FAC900;
+       margin: 164px auto;
+       padding-left: 30px;
+       padding-right: 30px;
+       border-radius: 15px;
+   }
+   
+   .saiba-mais-modal .icone-image {
+       width: 72px;
+       height: 55px;
+       margin-top: -34px;
+   }
+   
+   .saiba-mais-modal p {
+       font-size: 11px;
+       font-weight: normal;
+   }
+   
+   .saiba-mais-modal .close {
+       width: 20px;
+       height: 20px;
+       background-color: #FAC900;
+       position: absolute;
+       right: 0px;
+       top: -24px;
+       justify-content: center;
+       text-align: center;
+       padding: 0;
+   }
+   
+   .saiba-mais-modal .modal-body {
+       padding: 0;
+   }
+   
+   .modal-backdrop {
+       z-index: -1 !important;
+   }
 
 
 /*.tela a,
@@ -672,6 +669,12 @@ iframe {
     margin-left: 36px;
 }
 
+.ml37 {
+    margin-left: 37px;
+}
+.ml38 {
+    margin-left: 38px;
+}
 /* Capas e Seções */
 .tela-secao>div {
     height: 245px;
