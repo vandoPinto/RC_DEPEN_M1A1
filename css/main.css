@@ -104,13 +104,15 @@ textarea {
    ========================================================================== */
 
 * {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
     margin: 0;
     width: 100%;
     height: 100%;
 }
+
 header h1,
 header hgroup {
     border: 0;
@@ -121,8 +123,10 @@ header hgroup {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
+
 /* Botão de abrir menu */
 .nav-indice-abrir {
     position: absolute;
@@ -130,15 +134,17 @@ header hgroup {
     top: 8px;
     z-index: 1;
 }
+
 .nav-indice-abrir a {
     font-size: 0px;
-}    
+}
+
 .nav-indice-abrir a::after {
-   /* content: url(../img/menu.svg);
+    /* content: url(../img/menu.svg);
     display: inline-block;
     width: 24px;
     height: 24px;*/
-   
+
 }
 
 @media (min-width:800px) {
@@ -150,12 +156,13 @@ header hgroup {
         top: 0;
         background-color: #e5e5e5;
         box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
-       /* min-height: 24px;
+        /* min-height: 24px;
         padding: 14px 0 18px;*/
     }
+
     header h1,
     header hgroup {
-       /* font-family: 'Open Sans', sans-serif;
+        /* font-family: 'Open Sans', sans-serif;
         font-weight: normal;
         font-size: 24px;
         line-height: 24px;
@@ -168,18 +175,20 @@ header hgroup {
         width: auto;
         white-space: normal;*/
     }
-    
+
     header hgroup h1,
     header hgroup h2 {
         margin: 0;
         padding: 0;
     }
+
     header hgroup h2 {
         font-weight: normal;
         font-size: 18px;
         margin-top: 2px;
         color: #444;
     }
+
     .nav-indice-abrir {
         position: absolute;
         right: 18px;
@@ -189,16 +198,18 @@ header hgroup {
         cursor: pointer;
         color: #483758;
     }
+
     .nav-indice-abrir a {
         font-family: 'Roboto', sans-serif;
         font-size: 16px;
         font-weight: normal;
         text-decoration: none;
-        color: #222; 
+        color: #222;
         line-height: 56px;
         display: block;
         padding-left: 26px;
     }
+
     .nav-indice-abrir a:hover,
     .nav-indice-abrir a:visited {
         color: #222;
@@ -209,7 +220,8 @@ header hgroup {
 /* Menu de navegação */
 .nav-indice {
     height: 100%;
-    width: 0; /* modificada por JavaScript */
+    width: 0;
+    /* modificada por JavaScript */
     overflow: hidden;
     position: fixed;
     z-index: 3;
@@ -220,6 +232,7 @@ header hgroup {
     transition: 0.5s;
     box-shadow: 1px 0 2px rgba(0, 0, 0, 0.5);
 }
+
 .nav-indice::before {
     content: "Sumário";
     font-size: 24px;
@@ -227,10 +240,12 @@ header hgroup {
     padding: 0 16px;
     line-height: 56px;
 }
+
 .nav-indice-lista {
     width: 250px;
     overflow-x: hidden;
 }
+
 /* links do menu de navegação */
 .nav-indice-lista a,
 .nav-indice-lista li {
@@ -241,37 +256,46 @@ header hgroup {
     display: block;
     transition: 0.3s;
 }
+
 .nav-indice-lista li a {
     display: inline;
     padding: 0;
 }
+
 .nav-indice-lista a:hover {
     background-color: #483158;
     color: #f7de2e;
 }
+
 .nav-indice-lista ol {
     margin: 0;
     padding: 0;
 }
+
 .nav-indice-lista ol li {
     margin: 0;
     list-style: none;
     counter-increment: indice-conter-n1;
 }
+
 .nav-indice-lista ol li::before {
     content: counter(indice-conter-n1) ". ";
 }
+
 .nav-indice-lista ol li ol li {
     counter-increment: indice-conter-n2;
 }
+
 .nav-indice-lista ol li ol li::before {
-    content: counter(indice-conter-n1) "." counter(indice-conter-n2) ". ";
+    content: counter(indice-conter-n1) "."counter(indice-conter-n2) ". ";
 }
+
 .nav-indice-lista ol li ol li ol li {
     counter-increment: indice-conter-n3;
 }
+
 .nav-indice-lista ol li ol li ol li::before {
-    content: counter(indice-conter-n1) "." counter(indice-conter-n2) "." counter(indice-conter-n3) ". ";
+    content: counter(indice-conter-n1) "."counter(indice-conter-n2) "."counter(indice-conter-n3) ". ";
 }
 
 /* botão de fechar para o menu de navegação */
@@ -294,12 +318,15 @@ header hgroup {
     top: 14px;
     z-index: 2;
 }
+
 .fullscreen-show {
     display: none;
 }
+
 .fullscreen-hide {
     display: block;
 }
+
 :fullscreen::backdrop {
     background-color: #f1f1f1;
 }
@@ -312,24 +339,31 @@ header hgroup {
 :-webkit-full-screen .fullscreen-show {
     display: block;
 }
+
 :-moz-full-screen .fullscreen-show {
     display: block;
 }
+
 :-ms-fullscreen .fullscreen-show {
     display: block;
 }
+
 :fullscreen .fullscreen-show {
     display: block;
 }
+
 :-webkit-full-screen .fullscreen-hide {
     display: none;
 }
+
 :-moz-full-screen .fullscreen-hide {
     display: none;
 }
+
 :-ms-fullscreen .fullscreen-hide {
     display: none;
 }
+
 :fullscreen .fullscreen-hide {
     display: none;
 }
@@ -337,43 +371,54 @@ header hgroup {
 /* ==========================================================================
    Estilos Gerais de Texto e Conteúdo
    ========================================================================== */
-p, li {
+p,
+li {
     text-align: left;
 }
+
 p.centro {
     text-align: left;
 }
+
 p.esquerda {
     text-align: left;
 }
+
 p.direita {
     text-align: left;
 }
+
 .negrito {
     font-weight: bolder;
 }
+
 figure {
     margin: 16px 0;
     padding: 0;
 }
+
 figure img {
-  margin: 0 auto;
-  display: block;
+    margin: 0 auto;
+    display: block;
 }
+
 figcaption {
     font-size: 12px;
     text-align: center;
     margin: 6px auto;
 }
+
 figure.citacao {
     background-image: url("../img/icone-citacao-abre.svg");
     background-position: top left;
     background-repeat: no-repeat;
     background-size: 35px 35px;
 }
+
 figure.citacao figcaption {
     text-align: right;
 }
+
 .citacao blockquote {
     background-image: url("../img/icone-citacao-fecha.svg");
     background-position: bottom right;
@@ -384,14 +429,17 @@ figure.citacao figcaption {
     padding-right: 40px;
     padding-left: 40px;
 }
+
 blockquote,
 blockquote p {
     font-family: 'Roboto', sans-serif;
 }
+
 cite {
-	font-weight: bold;
-	font-style: normal;
+    font-weight: bold;
+    font-style: normal;
 }
+
 /*dl.definicao {
   width: 90%;
   overflow: hidden;
@@ -438,12 +486,14 @@ dl.definicao {
     justify-content: center;
     align-items: stretch;
 }
+
 dl.definicao dt,
 dl.definicao dd {
     margin: 3px 0;
     padding: 3px 6px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
+
 dl.definicao dt {
     flex: 0 1 20%;
     text-align: right;
@@ -451,12 +501,14 @@ dl.definicao dt {
     background-color: #ccc;
     border-radius: 9px 0 0 9px;
 }
+
 dl.definicao dd {
     flex: 0 1 70%;
     text-align: justify;
     background-color: #e5e5e5;
     border-radius: 0 9px 9px 0;
 }
+
 iframe {
     display: block;
     margin: 16px auto;
@@ -537,7 +589,8 @@ iframe {
     padding: 0;
     position: absolute;
     width: 1px;
-    white-space: nowrap; /* 1 */
+    white-space: nowrap;
+    /* 1 */
 }
 
 /*
@@ -579,8 +632,10 @@ iframe {
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
 }
 
 .clearfix:after {
@@ -598,9 +653,9 @@ iframe {
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
     /* Style adjustments for high resolution devices */
 }
 
@@ -611,6 +666,7 @@ iframe {
    ========================================================================== */
 
 @media print {
+
     *,
     *:before,
     *:after,
@@ -623,7 +679,8 @@ iframe {
     blockquote:first-line,
     li:first-line {
         background: transparent !important;
-        color: #000 !important; /* Black prints faster:
+        color: #000 !important;
+        /* Black prints faster:
                                    http://www.sanbeiji.com/archives/953 */
         box-shadow: none !important;
         text-shadow: none !important;
@@ -635,11 +692,11 @@ iframe {
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
 
     /*
@@ -655,6 +712,7 @@ iframe {
     pre {
         white-space: pre-wrap !important;
     }
+
     pre,
     blockquote {
         border: 1px solid #999;

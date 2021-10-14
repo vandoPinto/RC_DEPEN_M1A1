@@ -25,7 +25,7 @@
             $('input[type="radio"]:checked').prop("checked", false);
             $("section:not([id='resultados'])").each(function (indexQuestao, questao) {
                 $(questao).attr("id", "q" + indexQuestao);
-                $(questao).prepend("<h2>Questão " + (indexQuestao + 1) + " de " + total + "</h2>");
+                $(questao).prepend("<h2>Questão " + (indexQuestao + 1) /*+ " de " + total + "</h2>"*/);
                 $(questao).find("form input[type='button']").attr("id", "q" + indexQuestao + "verificar");
                 $(questao).find("form input[type='radio']").each(function (indexOpcao, opcao) {
                     $(opcao).attr("id", "q" + indexQuestao + "-" + indexOpcao);
@@ -125,7 +125,7 @@
                 } else if (opcaoSelecionada != opcaoCorreta) { //se opção selecionada for incorreta, exibir aviso do erro e mostrar feedback
                     $("#" + questao + " form input[name='opcao']:checked+label").addClass("incorreta");
                     $("#" + questao + " form input[name='opcao']:checked+label+div").addClass("incorreta").show('slow');
-                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top -50);
+                    $(".me_feedback.incorreta").css('top', $("#" + questao + "verificar").position().top -60);
                     exibirFeedback(questao, opcaoSelecionada);
                 } else if (opcaoSelecionada == opcaoCorreta) {
                     //se opção selecionada for a correta, exibir aviso de acerto e mostrar feedback
@@ -280,8 +280,8 @@
         input[type="radio"]+label::before,
         input[type="checkbox"]+label::before {
             counter-increment: opcoes;
-            content: "("counter(opcoes, lower-alpha) ") ";
-            font-weight: bold;
+            content: counter(opcoes, lower-alpha) ") ";
+            /* font-weight: bold; */
         }
 
         input[type="button"] {
