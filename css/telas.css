@@ -761,16 +761,6 @@ ul {
 
 }
 
-li {
-    /* margin-bottom: 0px; */
-
-}
-
-/*
-li::before {
-    color:#339933;
-}*/
-
 .fleft {
     float: left;
 }
