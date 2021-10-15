@@ -173,11 +173,11 @@
     <script src="https://www.google-analytics.com/analytics.js" async defer></script>-->
     <script>
         $(document).ready(function() {
-            if (lastPage() > 1) {
-                $("#userModal").modal();
-                $('#tela').addClass('no-border');
-                $('.nav-telas-progresso a').addClass('minimal-border');
-            }
+            // if (lastPage() > 1) {
+            //     $("#userModal").modal();
+            //     $('#tela').addClass('no-border');
+            //     $('.nav-telas-progresso a').addClass('minimal-border');
+            // }
             $(window).on('hidden.bs.modal', function() {
                 $(".modal-backdrop").removeClass('modal-backdrop fade show')
                 $('#tela').removeClass('no-border');
