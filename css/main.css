@@ -139,14 +139,6 @@ header hgroup {
     font-size: 0px;
 }
 
-.nav-indice-abrir a::after {
-    /* content: url(../img/menu.svg);
-    display: inline-block;
-    width: 24px;
-    height: 24px;*/
-
-}
-
 @media (min-width:800px) {
     header {
         display: block;
@@ -158,22 +150,6 @@ header hgroup {
         box-shadow: 0 3px 2px rgba(0, 0, 0, 0.5);
         /* min-height: 24px;
         padding: 14px 0 18px;*/
-    }
-
-    header h1,
-    header hgroup {
-        /* font-family: 'Open Sans', sans-serif;
-        font-weight: normal;
-        font-size: 24px;
-        line-height: 24px;
-        margin: 0 16px 0 150px;
-        border: 0 none transparent;
-        clip: auto;
-        height: auto;
-        overflow: auto;
-        position: static;
-        width: auto;
-        white-space: normal;*/
     }
 
     header hgroup h1,
