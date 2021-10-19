@@ -373,10 +373,6 @@ td {
     /*border: 1px solid #666666;*/
 }
 
-tr:nth-child(even) {
-    background-color: #eee;
-}
-
 thead,
 th {
     background-color: #999;
