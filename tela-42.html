@@ -1,44 +1,22 @@
-<div style="height: 72px; width: 100%; background-color: #FAC900; ">
-    <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
-    <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
-    <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
-    <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
-</div>
-<div class="coluna-esquerda largura-1_1" style="max-width: 888px;">
-    <h1 style="margin-top: 46px; margin-left: -290px; text-align: center;">Concluindo...</h1>
-    <p style="width: 100%; text-align: center;">Vamos sintetizar nossa primeira aula? <strong style="color: #004D73;">
-            Para isso, clique no ícone de vídeo.</strong></p>
-    <div style="text-align: center; margin-top: 40px; cursor: pointer;" class="btn" data-toggle="modal" data-target="#modalCentro">
-        <img src="recursos/imgs/SI_10.png" style="width: 233px; height: 180px;">
+<div class=" coluna-esquerda largura-1_1 tela-cheia centro">
+    <div style="height: 72px; width: 100%; background-color: #FAC900; ">
+        <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
+        <img style="height: 43.5px; width:180px; margin-top: 12.8px; margin-left: 68.45px;" src="recursos/imgs/SI_H1.png">
+        <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
+        <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
     </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="modalCentro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="overflow-y:hidden;">
-    <div class="modal-dialog modal-dialog-centered " role="document">
-        <div class="modal-content" style="position: fixed; top: 72px; left: 0; width: 100%; height: 370px;">
-            <div data-dismiss="modal" class="close" aria-hidden="true" style="margin-left: auto; padding-right: 10px;">&times;</div>
-            <video id="full-video" width="100%" height="345px" controls>
-                <source src="recursos/video/SV_02.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="objetivo">
+        <div class="objetivo-modal">
+            <img class="icone-image" src="recursos/imgs/SI_05.png">
+            <h1 style="margin-top: 20px;"><strong>Objetivo da aula</strong></h1>
+        
+            <p style="font-size: 14px; margin-top: 30px;">Ao fim desta aula, esperamos que você seja capaz de <strong>compreender</strong> como é caracterizado o sistema prisional brasileiro e de <strong>correlacionar</strong> a oferta de atenção à saúde levando em conta a estrutura física das unidades
+                prisionais, o perfil da população privada de liberdade e o perfil dos servidores que nelas trabalham.
+            </p>
         </div>
     </div>
+    <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
+        <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
+        <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+    </footer>
 </div>
-<!-- Fim modal -->
-<footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
-    <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
-    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
-</footer>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('.close').click(function(event) {
-            $("#full-video").get(0).pause();
-            $("#full-video").get(0).currentTime = 0;
-            event.preventDefault();
-        });
-        $('.btn').click(function(event) {
-            $("#full-video").get(0).currentTime = 0;
-            $("#full-video").get(0).play();
-        });
-    });
-</script>
