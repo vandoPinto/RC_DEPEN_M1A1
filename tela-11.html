@@ -4,36 +4,41 @@
     <img style="height: 73.05px; width:108.45px; margin-left:170.85px;" src="recursos/imgs/SI_H2.png">
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
-<div class="coluna-esquerda largura-1_3">
-    <img style="width: 434.65px; height: 389.25px; margin-top: 7px;" src="recursos/imgs/SI_18.png">
+<div class="coluna-esquerda largura-1_1" style="max-width: 888px;">
+    <p style=" margin-top: 46px; width: 100%; text-align: center;">Você conhece o Depen? Já ouviu falar sobre ele? Sabe quais são suas responsabilidades, atribuições e incumbências?</p>
+    <div style="text-align: center; margin-top: 40px; cursor: pointer;" class="btn" data-toggle="modal" data-target="#modalCentro">
+        <img src="recursos/imgs/SI_10.png" style="width: 233px; height: 180px;">
+    </div>
+    <p style="color: #004D73; font-size: 10px; text-align: center; width: 100%; margin-top: 50px;"><strong>Clique no ícone do vídeo para
+            saber algumas respostas sobre o Depen.</strong></p>
 </div>
-<div class="coluna-direita largura-1_2">
-    <div style="width: 450px; margin-top: 45px">
-        <div style="width: 390px; ">
-            <p>
-                De acordo com dados do SISDEPEN, a <strong>população</strong> <strong style="text-decoration: underline;">feminina</strong> privada de liberdade no Brasil é, em geral, composta de mulheres:
-            </p>
-            <div style="margin-left: 17px;">
-                <ul>
-                    <li>em idade reprodutiva (até 45 anos), solteiras;</li>
-                    <li>pretas ou pardas (cerca de 20 mil se identificam assim);</li>
-                    <li>provenientes de áreas urbanas;</li>
-                    <li>com ensino fundamental incompleto (13.229).</li>
-                </ul>
-            </div>
-        </div>
-        <div class=" saiba-mais-modal" style="margin: 0; margin-top: 50px;width: 352px;height: 165px;">
-            <div>
-                <div data-dismiss="modal" class="close" aria-hidden="true">&times;</div>
-                <img class="icone-image" src="recursos/imgs/SI_M_01.png">
-                <h1 style="font-size: 14px; margin-top: 15px; margin-bottom: 15px;"><strong>Saiba mais</strong></h1>
-                <p>Em 2010, a ONU instituiu as Regras de Bangkok, por meio das quais recomenda que o tratamento de mulheres presas e/ou infratoras seja orientado a partir de eixos voltados às necessidades específicas das mulheres, à prevenção contra abuso
-                    e violência e à proteção dos direitos das crianças (BRASIL, 2016).</p>
-            </div>
+<!-- Modal -->
+<div class="modal fade" id="modalCentro" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true" style="overflow-y:hidden;">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content" style="position: fixed; top: 72px; left: 0; width: 100%; height: 370px;">
+            <div data-dismiss="modal" class="close" aria-hidden="true" style="margin-left: auto; padding-right: 10px;">&times;</div>
+            <video id="full-video" width="100%" height="345px" controls>
+                <source src="recursos/video/SV_01.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
+<!-- Fim modal -->
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
     <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
 </footer>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.close').click(function(event) {
+            $("#full-video").get(0).pause();
+            $("#full-video").get(0).currentTime = 0;
+            event.preventDefault();
+        });
+        $('.btn').click(function(event) {
+            $("#full-video").get(0).currentTime = 0;
+            $("#full-video").get(0).play();
+        });
+    });
+</script>
