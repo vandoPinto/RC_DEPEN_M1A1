@@ -1,7 +1,8 @@
 <style>
-    a{
+    a {
         cursor: pointer;
     }
+
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;
@@ -127,11 +128,13 @@
 </div>
 
 <script>
-    let conteudo = $('#conteudo').hide();
-    $('#hotWord-bt').hover(() => {
-        conteudo.fadeIn()
-    })
-    $('#hotWord-bt').mouseout(() => {
-        conteudo.fadeOut()
+    $(() => {
+        let conteudo = $('#conteudo').hide();
+        $('#hotWord-bt').hover(() => {
+            conteudo.fadeIn()
+        })
+        $('#hotWord-bt').mouseout(() => {
+            conteudo.fadeOut()
+        })
     })
 </script>
