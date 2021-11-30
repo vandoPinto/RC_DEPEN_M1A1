@@ -90,6 +90,8 @@
 
 <script>
     $(() => {
+        pontos = 0;
+        let mostrarSub = true;
         let resposta = '';
         let feedCerto = $(document).find('[id^=feedCerto]').hide();
         let feedErrado = $(document).find('[id^=feedErrado]').hide();
@@ -111,8 +113,10 @@
         let questao = $(document).find('[id^=opc]').map((index, sel) => {
             $(sel).click(() => {
                 console.log(sel.id);
-                resposta = sel.id
-                submeter.fadeIn();
+                resposta = sel.id;
+                if (mostrarSub) {
+                    submeter.fadeIn();
+                }
                 desmarcarTudo();
                 $(sel).addClass("marcado");
             })
@@ -121,6 +125,9 @@
         $(submeter).on('click', () => {
             if (resposta.split("_")[1] == "c") {
                 $(feedCerto).fadeIn();
+                pontos += 1;
+                mostrarSub = false;
+                submeter.hide();
             } else {
                 $(feedErrado).fadeIn();
             }
