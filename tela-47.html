@@ -3,6 +3,41 @@
         margin-bottom: 12px;
         margin-left: 18px;
     }
+
+    .questao:hover {
+        background-color: #FAC900;
+        cursor: pointer;
+    }
+
+    .marcado {
+        background-color: #FAC900;
+    }
+
+    .submeter {
+        margin: 1em auto;
+        font-weight: bold;
+        color: #ffffff;
+        border-radius: 3px;
+        background-color: #FAC900;
+        border: solid 0 transparent;
+        outline: none;
+        box-shadow: 0 .1em rgba(0, 0, 0, .5);
+        padding: .5em;
+        display: block;
+        width: 50%;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .feed {
+        position: relative;
+        width: 270px;
+        height: 125px;
+        background-color: rgba(255, 214, 64, 1);
+        border-radius: 10px;
+        flex-wrap: nowrap;
+        cursor: pointer;
+    }
 </style>
 <div style="height: 72px; width: 100%; background-color: #FAC900; ">
     <div style="background-color: white; width: 17px; height: 66px; margin-left: 19px; display: flex;" />
@@ -11,25 +46,82 @@
     <img style="height: 46.8px; width:56.75px;  position: absolute; right: 1px;" src="recursos/imgs/SI_H3.png">
 </div>
 <div class="coluna-esquerda largura-1_3">
-    <img class="animate__animated animate__flipInX" style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_28.png">
+    <img class="animate__animated animate__flipInX"
+        style="height: 219.4px; width: 241.85px; margin-top: 80.65px; margin-left: 35px;" src="recursos/imgs/SI_28.png">
 </div>
-<div class="coluna-direita largura-2_1 ">
-    <div style="width: 538px;margin-top: 80px;margin-right: 37px;">
-        <ul>
-            <li>BRASIL. Ministério da Justiça e Segurança Pública. Departamento Penitenciário Nacional.
-                <strong> Sistema de Informações do Sistema Penitenciário Brasileiro:</strong> levantamento Nacional de Informações Penitenciárias. Brasília: Ministério da Justiça e Segurança Pública, 2020.
-            </li>
-            <li>BRASIL. Ministério da Saúde. Ministério da Justiça.<strong> Portaria Interministerial
-          No 1, de 2 de janeiro de 2014.</strong> Institui a Política Nacional de Atenção Integral à Saúde das Pessoas Privadas de Liberdade no Sistema Prisional (PNAISP) no âmbito do Sistema Único de Saúde<br>(SUS). Brasília: Ministério da Saúde; Ministério
-                da Justiça, 2014. Disponível em:
-                <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2014/pri0001_02_01_2014.html" target="_blank">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2014/pri0001_02_01_2014.htm</a>. Acesso em: 4 ago. 2021.</li>
-            <li>BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. Departamento de Vigilância das Doenças Transmissíveis. <strong> Manual de recomendações para o controle da tuberculose no
-          Brasil.</strong> Brasília: Ministério da Saúde, 2019.
-            </li>
-        </ul>
+<div class="coluna-direita largura-2_1" style="width: 500px; height: 500px; margin-top: 80px;margin-right: 75px;">
+    <!-- <iframe src="quiz.html"></iframe> -->
+    <h1>Questão 3</h1>
+    <p><strong>Quais são os agravos mais recorrentes no sistema prisional brasileiro?</strong>
+    </p>
+    <p class="questao" id="opc_e">a) Hepatite, gripe e bronquite.</p>
+    <p class="questao" id="opc_e">b) Asma, bronquite e covid-19.</p>
+    <p class="questao" id="opc_e">c) Tuberculose, bronquiolite e hepatite.</p>
+    <p class="questao" id="opc_e">d) Covid-19, tuberculose e pneumonia.</p>
+    <p class="questao" id="opc_c">e) HIV, sífilis e hepatite.</p>
+    <div class="submeter">Submeter</div>
+
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedCerto">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta correta</h2>
+        <p style="margin-left: 30px; width: 450px;">Você acertou! De acordo com os dados oficiais, HIV (7.469), sífilis
+            (4.362) e hepatite (2.292) são os agravos mais recorrentes no ambiente
+            carcerário.</p>
+    </div>
+
+    <div style="margin-top: -130px; width: 500px; height: 150px;" class="feed" id="feedErrado">
+        <img style="height: 70px; margin-top: -48px; margin-left: 30px;margin-bottom: 15px;"
+            src="recursos/imgs/SI_CE.png">
+        <h2 style="margin-left: 30px;">Resposta incorreta</h2>
+        <p style="margin-left: 30px; width: 450px;">De acordo com os dados oficiais, HIV (7.469), sífilis (4.362) e
+            hepatite (2.292) são os agravos mais recorrentes no ambiente carcerário.</p>
     </div>
 </div>
 <footer style="height: 39.05px; width: 100%; background-color: #FAC900;">
     <img style="height: 22.65px; width:256.8px; margin: 8.5px 37.05px;" src="recursos/imgs/SI_F1.png">
-    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;" src="recursos/imgs/SI_F2.png">
+    <img style="height: 22.75px; width:225.8px; margin: 8.5px 37.05px; position: absolute; right: 0px;"
+        src="recursos/imgs/SI_F2.png">
 </footer>
+
+<script>
+    $(() => {
+        let resposta = '';
+        let feedCerto = $(document).find('[id^=feedCerto]').hide();
+        let feedErrado = $(document).find('[id^=feedErrado]').hide();
+        let submeter = $(document).find('[class=submeter]').hide();
+
+        $(feedCerto).on('click', apagarFeeds);
+        $(feedErrado).on('click', apagarFeeds);
+
+        function apagarFeeds() {
+            feedCerto.fadeOut();
+            feedErrado.fadeOut();
+        }
+
+        function desmarcarTudo() {
+            let questao = $(document).find('[id^=opc]').map((index, sel) => {
+                $(sel).removeClass("marcado");
+            })
+        }
+
+        let questao = $(document).find('[id^=opc]').map((index, sel) => {
+            $(sel).click(() => {
+                console.log(sel.id);
+                resposta = sel.id
+                submeter.fadeIn();
+                desmarcarTudo();
+                $(sel).addClass("marcado");
+            })
+        })
+
+        $(submeter).on('click', () => {
+            console.log("clicou " + resposta.split("_")[1]);
+            if (resposta.split("_")[1] == "c") {
+                $(feedCerto).fadeIn();
+            } else {
+                $(feedErrado).fadeIn();
+            }
+        })
+    })
+</script>
